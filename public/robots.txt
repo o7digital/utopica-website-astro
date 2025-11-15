@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://utopica.net
+
+# Sitemaps
+Sitemap: https://utopica.net/sitemap.xml
+Sitemap: https://utopica.net/server-sitemap.xml

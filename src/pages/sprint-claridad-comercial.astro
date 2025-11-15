@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BreadcrumbListSchema } from '@/components/schema-org';
+import { SprintServiceSchema, FAQSchemaExtended } from '@/components/schema/service-schema';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
+import { SprintHero } from '@/components/sprint/sprint-hero';
+import { SprintProblemStatic } from '@/components/sprint/sprint-problem-static';
+import { SprintProblemDeep } from '@/components/sprint/sprint-problem-deep';
+import { SprintWhyNow } from '@/components/sprint/sprint-why-now';
+import { SprintFailedSolutions } from '@/components/sprint/sprint-failed-solutions';
+import { SprintSuccessCriteria } from '@/components/sprint/sprint-success-criteria';
+import { SprintComparisonStatic } from '@/components/sprint/sprint-comparison-static';
+import { SprintProcess } from '@/components/sprint/sprint-process';
+import { SprintBonuses } from '@/components/sprint/sprint-bonuses';
+import { SprintOffer } from '@/components/sprint/sprint-offer';
+import { SprintCTA } from '@/components/sprint/sprint-cta';
+import { SprintFAQ } from '@/components/sprint/sprint-faq';
+
+const title = 'Sprint de Claridad Comercial | 9 Herramientas en 4 Semanas - Utópica';
+const description = 'Obtén un mensaje claro y 9 herramientas probadas para que tu equipo venda sin ti. Programa intensivo de 4 semanas con garantía de resultados para fundadores B2B.';
+
+const breadcrumbItems = [
+  {
+    name: "Inicio",
+    item: "https://utopica.net/"
+  },
+  {
+    name: "Sprint de Claridad Comercial",
+    item: "https://utopica.net/sprint-claridad-comercial"
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <BreadcrumbListSchema items={breadcrumbItems} client:only="react" />
+  <SprintServiceSchema client:only="react" />
+  <FAQSchemaExtended client:only="react" />
+  
+  <ScrollProgress client:load />
+  
+  <SprintHero client:load />
+  <SprintProblemStatic client:visible />
+  <SprintProblemDeep client:visible />
+  <SprintWhyNow client:visible />
+  <SprintFailedSolutions client:visible />
+  <SprintSuccessCriteria client:visible />
+  <SprintComparisonStatic client:visible />
+  <SprintProcess client:visible />
+  <SprintBonuses client:visible />
+  <SprintOffer client:visible />
+  <SprintCTA client:visible />
+  <SprintFAQ client:visible />
+</Layout>

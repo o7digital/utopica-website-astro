@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
+import { HeroSection } from '@/components/homepage/hero-section';
+import { StakesSectionStatic } from '@/components/homepage/stakes-section-static';
+import { CommercialInjusticeSection } from '@/components/homepage/commercial-injustice-section';
+import { ClarityPathSectionStatic } from '@/components/homepage/clarity-path-section-static';
+import { NextStepsSectionStatic } from '@/components/homepage/next-steps-section-static';
+
+const title = 'Libertad Comercial para Fundadores B2B | Sprint de Claridad - Utópica';
+const description = 'Obtén un mensaje claro y 9 herramientas probadas para que tu equipo venda sin ti. Sprint de 4 semanas con garantía de resultados. Para fundadores que facturan +$50k USD/mes.';
+---
+
+<Layout title={title} description={description}>
+  <ScrollProgress client:load />
+  
+  <HeroSection client:load />
+  <StakesSectionStatic client:visible />
+  <CommercialInjusticeSection client:visible />
+  <ClarityPathSectionStatic client:visible />
+  <NextStepsSectionStatic client:visible />
+</Layout>

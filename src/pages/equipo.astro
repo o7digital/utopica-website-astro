@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BreadcrumbListSchema } from '@/components/schema-org';
+import { TeamHero } from '@/components/team/team-hero';
+import { LeadershipSection } from '@/components/team/leadership-section';
+import { AdvisorySection } from '@/components/team/advisory-section';
+import { ValuesSection } from '@/components/team/values-section';
+import { TeamCTA } from '@/components/team/team-cta';
+
+const title = 'Nuestro Equipo - Utópica';
+const description = 'Conoce al equipo de Utópica, expertos en claridad comercial y ventas B2B que ayudan a fundadores a escalar sus negocios.';
+
+const breadcrumbItems = [
+  {
+    name: "Inicio",
+    item: "https://utopica.net/"
+  },
+  {
+    name: "Equipo",
+    item: "https://utopica.net/equipo"
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <BreadcrumbListSchema items={breadcrumbItems} client:only="react" />
+  
+  <TeamHero client:load />
+  <LeadershipSection client:visible />
+  <AdvisorySection client:visible />
+  <ValuesSection client:visible />
+  <TeamCTA client:visible />
+</Layout>
