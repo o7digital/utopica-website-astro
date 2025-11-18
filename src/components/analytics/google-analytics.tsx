@@ -1,31 +1,30 @@
 'use client';
 
-import Script from 'next/script';
+import { useEffect } from 'react';
 
 export function GoogleAnalytics() {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-  if (!GA_MEASUREMENT_ID) {
-    return null;
-  }
+  useEffect(() => {
+    if (!GA_MEASUREMENT_ID || typeof window === 'undefined') return;
 
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    // Load gtag script
+    const script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.async = true;
+    document.head.appendChild(script);
 
-          gtag('config', '${GA_MEASUREMENT_ID}', {
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
-    </>
-  );
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) {
+      window.dataLayer.push(args);
+    }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID, {
+      page_path: window.location.pathname,
+    });
+  }, [GA_MEASUREMENT_ID]);
+
+  return null;
 }

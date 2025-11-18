@@ -1,5 +1,3 @@
-"use client";
-
 import { Link } from '@/components/ui/Link';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';

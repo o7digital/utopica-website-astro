@@ -1,5 +1,3 @@
-'use client';
-
 import { Link } from '@/components/ui/Link';
 import { Linkedin, Youtube } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';

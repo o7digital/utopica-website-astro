@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useCallback } from 'react';
-import Script from 'next/script';
-import { usePathname, useSearchParams } from 'next/navigation';
 
 export function Analytics() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
   
   // Google Analytics ID
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -31,31 +29,30 @@ export function Analytics() {
     return null;
   }
 
-  return (
-    <>
-      {/* Global Site Tag (gtag.js) - Google Analytics */}
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-              cookie_flags: 'SameSite=None;Secure',
-              anonymize_ip: true
-            });
-          `,
-        }}
-      />
-    </>
-  );
+  useEffect(() => {
+    if (!GA_MEASUREMENT_ID || typeof window === 'undefined') return;
+
+    // Load gtag script
+    const script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.async = true;
+    document.head.appendChild(script);
+
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) {
+      window.dataLayer.push(args);
+    }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID, {
+      page_path: window.location.pathname,
+      cookie_flags: 'SameSite=None;Secure',
+      anonymize_ip: true
+    });
+  }, [GA_MEASUREMENT_ID]);
+
+  return null;
 }
 
 /**

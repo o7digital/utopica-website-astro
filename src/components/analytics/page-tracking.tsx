@@ -1,12 +1,11 @@
 'use client';
 
 import { useTimeOnPageTracking } from '@/hooks/use-scroll-tracking';
-import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import { pageview } from '@/lib/analytics';
 
 export function PageTracking() {
-  const pathname = usePathname();
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
   
   // Track time on page
   useTimeOnPageTracking();
