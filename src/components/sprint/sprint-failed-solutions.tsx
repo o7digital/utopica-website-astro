@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { X, Clock, DollarSign, Users, Target, Zap } from 'lucide-react';
 

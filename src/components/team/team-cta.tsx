@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { TrackedCTAButton } from '@/components/ui/tracked-cta-button';

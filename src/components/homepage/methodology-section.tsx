@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { MessageSquare, Target, Zap, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';

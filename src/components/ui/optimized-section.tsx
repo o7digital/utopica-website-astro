@@ -1,5 +1,3 @@
-'use client';
-
 import React, { memo, useEffect, useRef, useState, type ReactNode } from 'react';
 import { createIntersectionObserver } from '@/lib/utils/performance';
 

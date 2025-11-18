@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { Gift, Video, FileText, Clock, Target, MessageSquare, Calendar, MessageCircle, Brain, CheckCircle, type LucideIcon } from 'lucide-react';
 

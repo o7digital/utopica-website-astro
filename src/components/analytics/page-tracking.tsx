@@ -1,5 +1,3 @@
-'use client';
-
 import { useTimeOnPageTracking } from '@/hooks/use-scroll-tracking';
 import { useEffect } from 'react';
 import { pageview } from '@/lib/analytics';

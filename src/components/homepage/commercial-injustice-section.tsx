@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { AlertTriangle, Target, Award } from 'lucide-react';
 

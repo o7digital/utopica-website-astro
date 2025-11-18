@@ -1,14 +1,5 @@
 // Google Analytics event tracking functions
-
-declare global {
-  interface Window {
-    gtag: (
-      command: 'config' | 'event' | 'js' | 'set',
-      targetId: string,
-      config?: any
-    ) => void;
-  }
-}
+// Window.gtag type is defined in src/env.d.ts
 
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 

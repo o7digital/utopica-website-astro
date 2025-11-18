@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { TrendingDown, Calendar, Target, AlertCircle, DollarSign, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';

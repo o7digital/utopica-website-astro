@@ -1,5 +1,3 @@
-"use client";
-
 import { Link } from '@/components/ui/Link';
 import { type ReactNode } from 'react';
 import { cn } from '@/lib/utils';

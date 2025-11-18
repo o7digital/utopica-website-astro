@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Calendar, Users } from 'lucide-react';
 import { TrackedCTAButton } from '@/components/ui/tracked-cta-button';

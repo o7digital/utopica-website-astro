@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { X, CheckCircle2, TrendingUp, Clock, Users, Plane } from 'lucide-react';
 

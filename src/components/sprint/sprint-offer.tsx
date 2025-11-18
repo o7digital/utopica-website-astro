@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { Sparkles, Gift, ArrowRight, Shield, CheckCircle2, Package, Crown, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';

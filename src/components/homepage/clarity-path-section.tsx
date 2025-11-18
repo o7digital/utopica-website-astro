@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { MessageSquare, Target, Sparkles, Users, Navigation, Gift, UserCheck, Globe, Trophy } from 'lucide-react';
 

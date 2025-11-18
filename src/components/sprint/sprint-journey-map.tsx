@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { Lightbulb, Hammer, Rocket, CheckCircle2 } from 'lucide-react';
 

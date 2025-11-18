@@ -112,7 +112,7 @@ export const WebsiteSchema = ({
   );
 };
 
-export const BreadcrumbListSchema = ({ items }: BreadcrumbListProps) => {
+export function BreadcrumbListSchema({ items }: { items: { name: string; item: string; }[] }) {
   const itemListElement = items.map((item, index) => ({
     '@type': 'ListItem',
     position: index + 1,

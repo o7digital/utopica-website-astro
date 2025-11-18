@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from 'framer-motion';
 import { AlertTriangle, Zap, Users, Sparkles } from 'lucide-react';
 

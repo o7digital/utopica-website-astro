@@ -1,5 +1,3 @@
-'use client';
-
 import { forwardRef } from 'react';
 import { Link } from '@/components/ui/Link';
 import { Button, type ButtonProps } from '@/components/ui/button';
