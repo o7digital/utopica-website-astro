@@ -115,12 +115,7 @@ export async function logError(
   const errorType = categorizeError(error);
   
   try {
-    // Log a Google Analytics usando la función del componente analytics
-    if (typeof window !== 'undefined') {
-      // Importación dinámica para evitar problemas de SSR
-      const { trackError } = await import('@/components/analytics');
-      trackError(error, additionalContext?.context);
-    }
+    // Analytics removed per client request
 
     // Log a consola en desarrollo
     if (process.env.NODE_ENV === 'development') {
@@ -193,15 +188,7 @@ export async function attemptRecovery(error: Error): Promise<boolean> {
         recovered = false;
     }
     
-    // Track recovery attempt si fue exitoso
-    if (recovered && typeof window !== 'undefined') {
-      try {
-        const { trackErrorRecovery } = await import('@/components/analytics');
-        trackErrorRecovery(errorType);
-      } catch (trackingError) {
-        console.error('Failed to track recovery:', trackingError);
-      }
-    }
+    // Analytics removed per client request
     
     return recovered;
   } catch (recoveryError) {

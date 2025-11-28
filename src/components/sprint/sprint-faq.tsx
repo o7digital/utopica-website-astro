@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
-import { trackConversion } from '@/lib/analytics';
 
 const faqs = [
   {
@@ -44,9 +43,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
       <button
         onClick={() => {
           setIsOpen(!isOpen);
-          if (!isOpen) {
-            trackConversion.faqInteraction(question);
-          }
+          // Tracking removed per client request
         }}
         className="w-full py-6 flex items-center justify-between text-left hover:text-primary transition-colors"
       >

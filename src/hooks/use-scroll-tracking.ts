@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { trackConversion } from '@/lib/analytics';
 
 interface ScrollTrackingOptions {
   threshold?: number; // Percentage of element visible before triggering
@@ -24,7 +23,7 @@ export function useScrollTracking(
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio >= threshold / 100) {
             if (!trackOnce || !hasTracked.current) {
-              trackConversion.scrollToSection(sectionName);
+              // Tracking removed per client request
               hasTracked.current = true;
             }
           }
@@ -56,18 +55,16 @@ export function useTimeOnPageTracking() {
     const checkTimeOnPage = () => {
       const timeSpent = Math.floor((Date.now() - startTime.current) / 1000);
 
+      // Tracking removed per client request
       if (timeSpent >= 30 && !hasSent30s.current) {
-        trackConversion.timeOnPage(30);
         hasSent30s.current = true;
       }
       
       if (timeSpent >= 60 && !hasSent60s.current) {
-        trackConversion.timeOnPage(60);
         hasSent60s.current = true;
       }
       
       if (timeSpent >= 120 && !hasSent120s.current) {
-        trackConversion.timeOnPage(120);
         hasSent120s.current = true;
       }
     };
@@ -76,11 +73,7 @@ export function useTimeOnPageTracking() {
 
     return () => {
       clearInterval(interval);
-      // Send final time on page when component unmounts
-      const finalTime = Math.floor((Date.now() - startTime.current) / 1000);
-      if (finalTime > 5) {
-        trackConversion.timeOnPage(finalTime);
-      }
+      // Tracking removed per client request
     };
   }, []);
 }

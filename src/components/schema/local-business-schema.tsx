@@ -58,7 +58,7 @@ export function LocalBusinessSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Auditoría de Claridad Comercial",
+            "name": "Sesión de Claridad Comercial",
             "description": "Diagnóstico gratuito de tu mensaje y proceso de ventas"
           }
         }

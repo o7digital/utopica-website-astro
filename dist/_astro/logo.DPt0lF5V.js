@@ -1,0 +1,1 @@
+import{j as o}from"./jsx-runtime.D3GSbgeI.js";function i({className:t}){return o.jsx("img",{src:"/images/Utopica Logo.svg",alt:"Utópica - Libertad Comercial para Fundadores B2B",width:160,height:42,className:`object-contain ${t||""}`,style:{objectFit:"contain"}})}export{i as L};
