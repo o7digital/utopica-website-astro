@@ -61,7 +61,7 @@ export function categorizeError(error: Error): ErrorType {
  * Genera un ID único para cada sesión de usuario
  */
 export function generateSessionId(): string {
-  return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  return `${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
 }
 
 /**
@@ -112,7 +112,6 @@ export async function logError(
   additionalContext?: Record<string, any>
 ): Promise<void> {
   const errorDetails = formatErrorDetails(error, errorInfo, additionalContext);
-  const errorType = categorizeError(error);
   
   try {
     // Analytics removed per client request

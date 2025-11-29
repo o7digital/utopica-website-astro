@@ -32,7 +32,7 @@ export function HeroSlider() {
   };
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden mt-16">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">

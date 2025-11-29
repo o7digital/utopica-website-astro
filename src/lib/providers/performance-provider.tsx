@@ -1,7 +1,6 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useRef } from 'react';
-import { preloadWorkshops } from '@/lib/hooks/use-workshops';
 
 interface PerformanceContextValue {
   preloadedData: Set<string>;
@@ -28,15 +27,7 @@ export function PerformanceProvider({ children }: PerformanceProviderProps) {
     if (!hasPreloaded.current) {
       hasPreloaded.current = true;
       
-      // Start preloading workshops data immediately
-      preloadWorkshops()
-        .then(() => {
-          preloadedData.current.add('workshops');
-          console.log('✅ Workshops data preloaded successfully');
-        })
-        .catch((error) => {
-          console.error('❌ Failed to preload workshops:', error);
-        });
+      // Preload workshops removed - not needed
 
       // Preload other critical resources
       if (typeof window !== 'undefined') {

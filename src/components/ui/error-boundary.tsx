@@ -165,7 +165,6 @@ Timestamp: ${new Date().toISOString()}
         return fallback(error, this.handleRetry);
       }
 
-      const errorType = categorizeError(error);
       const userMessage = getUserFriendlyErrorMessage(error);
       const isPageLevel = level === 'page';
 

@@ -2,28 +2,8 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Calendar, Users } from 'lucide-react';
 import { TrackedCTAButton } from '@/components/ui/tracked-cta-button';
 import { ScrollIndicator } from '@/components/ui/scroll-indicator';
-import { useWorkshops } from '@/lib/hooks/use-workshops';
-import { useMemo } from 'react';
 
 export function SprintHero() {
-  // Use optimized hook with preload pattern
-  const { nextWorkshop, loading, error } = useWorkshops({
-    preload: true,
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    refetchOnMount: false // Don't refetch if we have recent data
-  });
-
-  // Memoize workshop info to prevent unnecessary re-renders
-  const workshopInfo = useMemo(() => {
-    if (!nextWorkshop) return null;
-    
-    return {
-      date: nextWorkshop.date,
-      title: nextWorkshop.title,
-      spotsLeft: nextWorkshop.maxParticipants - nextWorkshop.currentParticipants,
-      maxParticipants: nextWorkshop.maxParticipants
-    };
-  }, [nextWorkshop]);
 
   return (
     <section 
@@ -49,21 +29,7 @@ export function SprintHero() {
             className="inline-flex items-center gap-3 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6"
           >
             <Calendar className="h-5 w-5" />
-            {loading ? (
-              <span className="font-semibold">Cargando próximo grupo...</span>
-            ) : workshopInfo ? (
-              <span className="font-semibold">
-                Próximo Grupo: {workshopInfo.date.toLocaleDateString('es-ES', { 
-                  day: 'numeric', 
-                  month: 'long',
-                  year: 'numeric'
-                })}
-              </span>
-            ) : error ? (
-              <span className="font-semibold text-muted-foreground">Error al cargar fechas</span>
-            ) : (
-              <span className="font-semibold">Próximamente nuevas fechas</span>
-            )}
+            <span className="font-semibold">Próximo grupo en Enero 2026</span>
           </motion.div>
           
           <motion.h1 
@@ -144,19 +110,7 @@ export function SprintHero() {
             className="inline-flex items-center gap-2 text-lg mb-6"
           >
             <Users className="h-5 w-5 text-primary" />
-            {loading || !workshopInfo ? (
-              <span className="text-muted-foreground">Lugares limitados</span>
-            ) : workshopInfo.spotsLeft > 0 ? (
-              <span className="font-semibold text-primary">
-                {workshopInfo.spotsLeft === 1 
-                  ? '⚠️ Último lugar disponible' 
-                  : workshopInfo.spotsLeft === 2 
-                    ? 'Solo quedan 2 lugares' 
-                    : `Solo quedan ${workshopInfo.spotsLeft} lugares`}
-              </span>
-            ) : (
-              <span className="font-semibold text-destructive">Grupo completo - Lista de espera</span>
-            )}
+            <span className="font-semibold text-primary">Solo 5 lugares por grupo</span>
           </motion.div>
 
           <motion.div 
