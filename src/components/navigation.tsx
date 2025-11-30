@@ -5,10 +5,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/logo";
 
-const mainRoutes = [
+const mainRoutesEs = [
   { href: "/", label: "Inicio" },
   { href: "/sprint-claridad-comercial", label: "Sprint de Claridad" },
   { href: "/equipo", label: "Equipo" },
+];
+
+const mainRoutesEn = [
+  { href: "/en", label: "Home" },
+  { href: "/en/clarity-sprint", label: "Clarity Sprint" },
+  { href: "/en/team", label: "Team" },
 ];
 
 interface NavigationProps {
@@ -17,6 +23,11 @@ interface NavigationProps {
 
 export function Navigation({ pathname = "/" }: NavigationProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
+  const isEnglish = pathname.startsWith("/en");
+  const routes = isEnglish ? mainRoutesEn : mainRoutesEs;
+  const toggleHref = isEnglish
+    ? pathname.replace(/^\/en/, "") || "/"
+    : `/en${pathname === "/" ? "" : pathname}`;
 
   return (
     <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b" role="navigation" aria-label="Navegación principal">
@@ -29,8 +40,8 @@ export function Navigation({ pathname = "/" }: NavigationProps = {}) {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {mainRoutes.map((route) => (
+          <div className="hidden lg:flex items-center space-x-6">
+            {routes.map((route) => (
               <Link
                 key={route.href}
                 href={route.href}
@@ -38,19 +49,25 @@ export function Navigation({ pathname = "/" }: NavigationProps = {}) {
                   "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm",
                   pathname === route.href
                     ? "text-primary"
-                    : "text-muted-foreground"
+                  : "text-muted-foreground"
                 )}
               >
                 {route.label}
               </Link>
             ))}
             <Link
+              href={toggleHref}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+            >
+              {isEnglish ? "ES" : "EN"}
+            </Link>
+            <Link
               href={process.env.NEXT_PUBLIC_RECLAIM_URL || "https://app.reclaim.ai/m/gael/sesion-estrategica-claridad-comercial"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
-              Agendar Sesión de Claridad
+              {isEnglish ? "Book a Clarity Session" : "Agendar Sesión de Claridad"}
             </Link>
           </div>
 
@@ -84,7 +101,7 @@ export function Navigation({ pathname = "/" }: NavigationProps = {}) {
             aria-label="Menú de navegación móvil"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-b">
-              {mainRoutes.map((route) => (
+              {routes.map((route) => (
                 <Link
                   key={route.href}
                   href={route.href}
@@ -101,6 +118,14 @@ export function Navigation({ pathname = "/" }: NavigationProps = {}) {
                 </Link>
               ))}
               <Link
+                href={toggleHref}
+                className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                onClick={() => setIsOpen(false)}
+                role="menuitem"
+              >
+                {isEnglish ? "ES" : "EN"}
+              </Link>
+              <Link
                 href={process.env.NEXT_PUBLIC_RECLAIM_URL || "https://app.reclaim.ai/m/gael/sesion-estrategica-claridad-comercial"}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -110,7 +135,7 @@ export function Navigation({ pathname = "/" }: NavigationProps = {}) {
                 }}
                 role="menuitem"
               >
-                Agendar Sesión de Claridad
+                {isEnglish ? "Book a Clarity Session" : "Agendar Sesión de Claridad"}
               </Link>
             </div>
           </motion.div>

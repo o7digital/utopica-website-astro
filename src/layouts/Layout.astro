@@ -24,6 +24,24 @@ const organizationLd = {
   areaServed: 'CDMX',
   keywords: 'libertad comercial CDMX, consultoría comercial CDMX, crecimiento empresarial CDMX, desempeño comercial humano, autonomía estratégica, inteligencia de mercado'
 };
+
+const organizationLdEn = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'UTOPICA',
+  description: 'Commercial freedom consulting, human autonomy, and strategic growth for companies in Mexico City.',
+  url: 'https://utopica.net/en',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Mexico City',
+    addressCountry: 'MX'
+  },
+  areaServed: 'Mexico City',
+  keywords: 'commercial freedom Mexico City, commercial consulting Mexico City, business growth CDMX, human commercial performance, strategic autonomy, market intelligence'
+};
+
+const isEnglish = pathname.startsWith('/en');
+const ldJson = isEnglish ? organizationLdEn : organizationLd;
 ---
 
 <!doctype html>
@@ -46,7 +64,7 @@ const organizationLd = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <script type="application/ld+json">
-      {JSON.stringify(organizationLd)}
+      {JSON.stringify(ldJson)}
     </script>
   </head>
   <body>
