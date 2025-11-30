@@ -3,9 +3,9 @@ import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown } from 'lucide-react
 import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
-  { image: '/images/utopica1.jpg' },
-  { image: '/images/utopica2.jpg' },
-  { image: '/images/utopica3.jpg' }
+  { image: '/images/utopica1.webp', fallback: '/images/utopica1.jpg' },
+  { image: '/images/utopica2.webp', fallback: '/images/utopica2.jpg' },
+  { image: '/images/utopica3.webp', fallback: '/images/utopica3.jpg' }
 ];
 
 export function HeroSlider() {
@@ -44,12 +44,16 @@ export function HeroSlider() {
             transition={{ duration: 1, ease: 'easeInOut' }}
             className="absolute inset-0"
           >
-            <div 
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ 
-                backgroundImage: `url(${slides[currentSlide].image})`,
-              }}
-            />
+            <picture>
+              <source srcSet={slides[currentSlide].image} type="image/webp" />
+              <img
+                src={slides[currentSlide].fallback}
+                alt="Hero background"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </picture>
             <div className="absolute inset-0 bg-black/20" />
           </motion.div>
         </AnimatePresence>
