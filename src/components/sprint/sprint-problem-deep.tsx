@@ -34,7 +34,7 @@ const consequences = {
     {
       icon: TrendingDown,
       title: "You're training the market not to value you",
-      description: "Every discount you give sets a precedent. Your reputation is becoming "the cheap one" not "the expert." Clients expect discounts because you taught them to.",
+      description: `Every discount you give sets a precedent. Your reputation is becoming "the cheap one" not "the expert." Clients expect discounts because you taught them to.`,
       impact: "Impact: Disappearing margins, damaged reputation"
     },
     {
@@ -63,7 +63,7 @@ const headers = {
     line1: 'You Work Twice to Earn Half',
     line2: 'And Every Month It Gets Worse',
     description:
-      'The "commercial injustice" isn't just frustrating. It's a silent bleed that's killing your business potential.',
+      `The "commercial injustice" isn't just frustrating. It's a silent bleed that's killing your business potential.`,
     questionTitle: 'The Million-Dollar Question:',
     questionText: 'How much longer are you willing to lose before you do something about it?',
     warningPrefix: 'Every month without clarity',

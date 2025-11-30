@@ -74,7 +74,7 @@ const copy = {
     line1: 'Every Month Without Clarity',
     line2: 'Is Revenue Lost Forever',
     description: 'While you hesitate, competitors are closing the clients that should be yours.',
-    ctaTitle: 'The question isn't "Should I do it?"',
+    ctaTitle: '``The question isn't "Should I do it?"``',
     ctaSubtitlePrefix: 'The question is:',
     ctaSubtitleBold: 'How much more are you willing to lose before acting?',
     stats: [

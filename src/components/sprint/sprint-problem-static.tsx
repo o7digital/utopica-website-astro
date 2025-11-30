@@ -34,7 +34,7 @@ const problemPoints = {
     {
       icon: Users,
       title: "Marketing brings leads that don't close",
-      description: "Lots of meetings, few sales. Prospects "think about it" and disappear."
+      description: `Lots of meetings, few sales. Prospects "think about it" and disappear.`
     }
   ]
 };

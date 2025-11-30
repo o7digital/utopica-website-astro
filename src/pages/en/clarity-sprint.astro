@@ -3,45 +3,53 @@ import Layout from '../../layouts/Layout.astro';
 import { BreadcrumbListSchema } from '@/components/schema-org';
 import { SprintServiceSchema, FAQSchemaExtended } from '@/components/schema/service-schema';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
-import { SprintHero } from '@/components/sprint/sprint-hero';
-import { SprintProblemStatic } from '@/components/sprint/sprint-problem-static';
-import { SprintProblemDeep } from '@/components/sprint/sprint-problem-deep';
-import { SprintWhyNow } from '@/components/sprint/sprint-why-now';
-import { SprintFailedSolutions } from '@/components/sprint/sprint-failed-solutions';
-import { SprintSuccessCriteria } from '@/components/sprint/sprint-success-criteria';
-import { SprintComparisonStatic } from '@/components/sprint/sprint-comparison-static';
-import { SprintProcess } from '@/components/sprint/sprint-process';
-import { SprintBonuses } from '@/components/sprint/sprint-bonuses';
-import { SprintOffer } from '@/components/sprint/sprint-offer';
-import { SprintCTA } from '@/components/sprint/sprint-cta';
-import { SprintFAQ } from '@/components/sprint/sprint-faq';
+import {
+  SprintHero,
+  SprintProblemStatic,
+  SprintProblemDeep,
+  SprintWhyNow,
+  SprintFailedSolutions,
+  SprintSuccessCriteria,
+  SprintComparisonStatic,
+  SprintProcess,
+  SprintBonuses,
+  SprintOffer,
+  SprintCTA,
+  SprintFAQ,
+} from '@/components/sprint';
 
-const title = 'Clarity Sprint | 9 Tools in 4 Weeks - UTOPICA';
-const description = 'Get a clear message and 9 proven tools so your team can sell without you. 4-week intensive with a results guarantee for B2B founders.';
-
+const title = 'Commercial Clarity Sprint | 9 Tools in 4 Weeks - Utópica';
+const description = 'Get a clear message and 9 proven tools so your team can sell without you. 4-week intensive with guarantees for B2B founders.';
 const breadcrumbItems = [
-  { name: 'Home', item: 'https://utopica.net/en' },
-  { name: 'Clarity Sprint', item: 'https://utopica.net/en/clarity-sprint' },
+  {
+    name: "Home",
+    item: "https://utopica.net/en"
+  },
+  {
+    name: "Clarity Sprint",
+    item: "https://utopica.net/en/clarity-sprint"
+  }
 ];
---- 
+const lang = 'en';
+---
 
 <Layout title={title} description={description}>
   <BreadcrumbListSchema items={breadcrumbItems} client:only="react" />
-  <SprintServiceSchema client:only="react" />
-  <FAQSchemaExtended client:only="react" />
-
+  <SprintServiceSchema lang={lang} client:only="react" />
+  <FAQSchemaExtended lang={lang} client:only="react" />
+  
   <ScrollProgress client:load />
-
-  <SprintHero lang="en" client:load />
-  <SprintProblemStatic lang="en" client:visible />
-  <SprintProblemDeep lang="en" client:visible />
-  <SprintWhyNow lang="en" client:visible />
-  <SprintFailedSolutions lang="en" client:visible />
-  <SprintSuccessCriteria lang="en" client:visible />
-  <SprintComparisonStatic lang="en" client:visible />
-  <SprintProcess lang="en" client:visible />
-  <SprintBonuses lang="en" client:visible />
-  <SprintOffer lang="en" client:visible />
-  <SprintCTA lang="en" client:visible />
-  <SprintFAQ lang="en" client:visible />
+  
+  <SprintHero lang={lang} client:load />
+  <SprintProblemStatic lang={lang} client:visible />
+  <SprintProblemDeep lang={lang} client:visible />
+  <SprintWhyNow lang={lang} client:visible />
+  <SprintFailedSolutions lang={lang} client:visible />
+  <SprintSuccessCriteria lang={lang} client:visible />
+  <SprintComparisonStatic lang={lang} client:visible />
+  <SprintProcess lang={lang} client:visible />
+  <SprintBonuses lang={lang} client:visible />
+  <SprintOffer lang={lang} client:visible />
+  <SprintCTA lang={lang} client:visible />
+  <SprintFAQ lang={lang} client:visible />
 </Layout>

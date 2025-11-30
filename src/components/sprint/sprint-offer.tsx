@@ -26,7 +26,7 @@ const stackItems: Record<Lang, string[]> = {
     "Discovery Scripts + Proposal + Email Sequences",
     "Optimized LinkedIn + Landing Page + Sales FAQ",
     "Recordings of All Sessions",
-    "Bonus #1: Masterclass "Conversations that Convert"",
+    'Bonus #1: Masterclass "Conversations that Convert"',
     "Bonus #2: Lifetime Access to Commercial Clarity Kit",
     "Bonus #3: Session 5 – Harvesting Wins",
     "Guarantee: We work until you get Clarity"

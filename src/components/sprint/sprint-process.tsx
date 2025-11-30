@@ -146,7 +146,7 @@ const steps: Record<
         },
         {
           number: "1.3",
-          title: "Paint the "after" so vividly they can taste it",
+          title: "``Paint the "after" so vividly they can taste it``",
           description: "Describe that new reality in an emotional, tangible way so they feel the urge to reach it.",
           result: "Transformed Client Vision",
           icon: Sparkles
@@ -256,15 +256,15 @@ const copy = {
     heading2: 'in Just 4 Weeks',
     intro: 'In 4 weeks you will build the 9 commercial assets that do justice to your service.',
     howItWorks: 'How the Sprint Works',
-    deliverablesTitle: 'By the End of the Sprint You'll Have:',
+    deliverablesTitle: '``By the End of the Sprint You'll Have:``',
     deliverables: [
       { title: '9 Commercial Assets Running', text: 'Everything implemented so the market understands your value' },
       { title: 'A Message that Does Justice to Your Service', text: 'Your communication finally reflects your quality' },
       { title: 'The End of Commercial Injustice', text: 'Your quality is no longer hidden behind confusing messaging' },
       { title: 'Results that Reflect Your Quality', text: 'Your business results finally match the caliber of your service' },
     ],
-    quote: '"The quality of your product gives you the right to compete, but it doesn't guarantee victory."',
-    quoteSub: 'It's time to win with a message that does justice to your work.',
+    quote: '"``The quality of your product gives you the right to compete, but it doesn't guarantee victory.``"',
+    quoteSub: '``It's time to win with a message that does justice to your work.``',
   },
 } as const;
 

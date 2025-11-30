@@ -38,8 +38,8 @@ const copy = {
     heading1: 'Ready to End',
     heading2: 'Commercial Injustice?',
     description:
-      'You don't need another course or consultant. You need clarity. In 4 weeks you end commercial injustice once and for all.',
-    cardTitle: 'Start with a Clarity Session',
+      `You don't need another course or consultant. You need clarity. In 4 weeks you end commercial injustice once and for all.`,
+    cardTitle: `Start with a Clarity Session`,
     cardSubtitle: '20 minutes to see if the Sprint is for you',
     steps: [
       {

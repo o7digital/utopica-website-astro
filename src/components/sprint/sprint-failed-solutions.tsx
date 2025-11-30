@@ -135,13 +135,13 @@ const copy = {
     realityCTA: '¿Existe algo así?',
   },
   en: {
-    line1: 'You've Tried Everything',
-    line2: 'And You're Still in the Same Place',
-    description: 'Let's be honest: if the obvious fixes worked, you'd already have a clear message that converts.',
+    line1: `You've Tried Everything`,
+    line2: `And You're Still in the Same Place`,
+    description: `Let's be honest: if the obvious fixes worked, you'd already have a clear message that converts.`,
     realityTitle: 'The Reality:',
     realityText:
-      'You need a solution that's as fast as DIY, as effective as consulting, and built for complex B2B.',
-    realityCTA: 'Does that even exist?',
+      `You need a solution that's as fast as DIY, as effective as consulting, and built for complex B2B.`,
+    realityCTA: `Does that even exist?`,
   },
 } as const;
 
