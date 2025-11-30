@@ -225,24 +225,25 @@ const lastUpdated = new Date().toLocaleDateString('en-US', { year: 'numeric', mo
       content: '';
       position: absolute;
       inset: 0;
-      height: 260px;
+      height: 320px;
       pointer-events: none;
-      background: linear-gradient(180deg, rgba(10, 16, 28, 0.92) 0%, rgba(10, 16, 28, 0.72) 55%, rgba(10, 16, 28, 0.42) 78%, rgba(10, 16, 28, 0) 100%);
+      background: linear-gradient(180deg, rgba(10, 16, 28, 0.94) 0%, rgba(10, 16, 28, 0.78) 60%, rgba(10, 16, 28, 0.48) 85%, rgba(10, 16, 28, 0) 100%);
       z-index: -1;
     }
   </style>
 
   <script>
-    // Dark gradient header on scroll (match lacasaquecanta style)
-    const toggleNavDark = () => {
+    // Dark gradient header that stays visible on scroll
+    const setNavDark = () => {
       const nav = document.querySelector('nav');
       if (!nav) return;
-      const isDark = window.scrollY > 24;
-      nav.dataset.dark = isDark ? 'true' : 'false';
-      nav.style.backdropFilter = isDark ? 'blur(12px)' : '';
+      nav.dataset.dark = 'true';
+      nav.style.setProperty('backdropFilter', 'blur(12px)', 'important');
+      nav.style.setProperty('background', 'linear-gradient(180deg, rgba(10, 16, 28, 0.95) 0%, rgba(10, 16, 28, 0.8) 60%, rgba(10, 16, 28, 0) 100%)', 'important');
+      nav.style.setProperty('borderColor', 'rgba(255, 255, 255, 0.12)', 'important');
     };
 
-    window.addEventListener('scroll', toggleNavDark);
-    window.addEventListener('load', toggleNavDark);
+    window.addEventListener('load', setNavDark);
+    window.addEventListener('scroll', setNavDark, { passive: true });
   </script>
 </Layout>
