@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
@@ -64,7 +64,7 @@ export function HeroSlider() {
           className="space-y-6"
         >
           {/* First Block - Main Title */}
-          <div className="bg-white/80 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-2xl">
+          <div className="bg-white/60 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center">
               ¿Ofreces un Servicio Increíble<br />
               pero las <span className="text-primary">Ventas no Llegan</span>?
@@ -72,7 +72,7 @@ export function HeroSlider() {
           </div>
 
           {/* Second Block - Everything else */}
-          <div className="bg-white/80 backdrop-blur-sm px-8 py-7 rounded-2xl shadow-2xl">
+          <div className="bg-white/60 backdrop-blur-sm px-8 py-7 rounded-2xl shadow-2xl">
             {/* Subtitle */}
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700 text-center mb-5">
               Aquí está el problema: puedes hacer un trabajo excepcional y aún<br className="hidden md:block" />
@@ -119,6 +119,22 @@ export function HeroSlider() {
       >
         <ChevronRight className="h-6 w-6" />
       </button>
+
+      {/* Descubre más */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white"
+      >
+        <span className="text-sm font-medium">Descubre más</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="h-5 w-5" />
+        </motion.div>
+      </motion.div>
 
       {/* Dots Navigation */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
