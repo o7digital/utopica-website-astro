@@ -1,8 +1,33 @@
+import { useEffect, useState } from 'react';
 import { Link } from '@/components/ui/Link';
 import { Linkedin, Youtube } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 
-export function Footer() {
+type FooterProps = {
+  pathname?: string;
+};
+
+export function Footer({ pathname }: FooterProps = {}) {
+  const [isEnglish, setIsEnglish] = useState(() => pathname?.startsWith('/en') ?? false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsEnglish(window.location.pathname.startsWith('/en'));
+    }
+  }, []);
+
+  const navLinks = isEnglish
+    ? [
+        { href: '/en', label: 'Home' },
+        { href: '/en/clarity-sprint', label: 'Clarity Sprint' },
+        { href: '/en/team', label: 'Team' },
+      ]
+    : [
+        { href: '/', label: 'Inicio' },
+        { href: '/sprint-claridad-comercial', label: 'Sprint de Claridad' },
+        { href: '/equipo', label: 'Equipo' },
+      ];
+
   return (
     <footer
       className="bg-[#f2f2f2] border-t border-gray-200 text-gray-900"
@@ -12,45 +37,35 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
-            <Link href="/" aria-label="Ir a la página de inicio">
+            <Link href={isEnglish ? '/en' : '/'} aria-label={isEnglish ? 'Go to homepage' : 'Ir a la página de inicio'}>
               <Logo className="w-[140px] h-[36px]" />
             </Link>
             <p className="text-sm text-gray-700">
-              Libertad comercial para fundadores B2B
+              {isEnglish
+                ? 'Commercial freedom for B2B founders'
+                : 'Libertad comercial para fundadores B2B'}
             </p>
             <p className="text-xs text-gray-500">
-              © {new Date().getFullYear()} Utópica. Todos los derechos reservados.
+              © {new Date().getFullYear()} Utópica. {isEnglish ? 'All rights reserved.' : 'Todos los derechos reservados.'}
             </p>
           </div>
 
-          {/* Compañía */}
+          {/* Company */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">COMPAÑÍA</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">
+              {isEnglish ? 'COMPANY' : 'COMPAÑÍA'}
+            </h3>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/"
-                  className="text-sm text-gray-700 hover:text-primary transition-colors"
-                >
-                  Inicio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sprint-claridad-comercial"
-                  className="text-sm text-gray-700 hover:text-primary transition-colors"
-                >
-                  Sprint de Claridad
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/equipo"
-                  className="text-sm text-gray-700 hover:text-primary transition-colors"
-                >
-                  Equipo
-                </Link>
-              </li>
+              {navLinks.map((route) => (
+                <li key={route.href}>
+                  <Link
+                    href={route.href}
+                    className="text-sm text-gray-700 hover:text-primary transition-colors"
+                  >
+                    {route.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -63,7 +78,7 @@ export function Footer() {
                   href="#"
                   className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
-                  Aviso de Privacidad
+                  {isEnglish ? 'Privacy Notice' : 'Aviso de Privacidad'}
                 </a>
               </li>
               <li>
@@ -71,7 +86,7 @@ export function Footer() {
                   href="#"
                   className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
-                  Condiciones Generales
+                  {isEnglish ? 'Terms & Conditions' : 'Condiciones Generales'}
                 </a>
               </li>
             </ul>
@@ -81,31 +96,33 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">NEWSLETTER</h3>
             <p className="text-sm text-gray-700 mb-4">
-              Sé el primero en recibir noticias sobre tendencias, promociones y más
+              {isEnglish
+                ? 'Be first to receive updates on trends, offers, and more.'
+                : 'Sé el primero en recibir noticias sobre tendencias, promociones y más'}
             </p>
             <form className="space-y-2">
               <input
                 type="email"
-                placeholder="Tu email"
+                placeholder={isEnglish ? 'Your email' : 'Tu email'}
                 className="w-full px-4 py-2 text-sm bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#f2f2f2]"
-                aria-label="Tu dirección de email"
+                aria-label={isEnglish ? 'Your email address' : 'Tu dirección de email'}
               />
               <button
                 type="submit"
                 className="w-full px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors"
               >
-                Suscribirse
+                {isEnglish ? 'Subscribe' : 'Suscribirse'}
               </button>
             </form>
             
             {/* Social links */}
-            <div className="flex items-center gap-4 mt-6" aria-label="Enlaces de redes sociales">
+            <div className="flex items-center gap-4 mt-6" aria-label={isEnglish ? 'Social links' : 'Enlaces de redes sociales'}>
               <a
                 href="https://www.linkedin.com/company/somosutopica/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#f2f2f2] rounded-sm"
-                aria-label="Visitar nuestro perfil de LinkedIn (se abre en una nueva ventana)"
+                aria-label={isEnglish ? 'Visit our LinkedIn profile (opens in a new window)' : 'Visitar nuestro perfil de LinkedIn (se abre en una nueva ventana)'}
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -114,7 +131,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#f2f2f2] rounded-sm"
-                aria-label="Visitar nuestro canal de YouTube (se abre en una nueva ventana)"
+                aria-label={isEnglish ? 'Visit our YouTube channel (opens in a new window)' : 'Visitar nuestro canal de YouTube (se abre en una nueva ventana)'}
               >
                 <Youtube className="h-5 w-5" />
               </a>
@@ -124,7 +141,9 @@ export function Footer() {
         
         <div className="mt-8 space-y-2">
           <p className="text-xs text-gray-600">
-            En CDMX acompañamos la libertad comercial y el crecimiento estratégico: consultoría comercial, libertad comercial, crecimiento empresarial y estrategia comercial.
+            {isEnglish
+              ? 'In CDMX we support commercial freedom and strategic growth: commercial consulting, commercial freedom, business growth, and commercial strategy.'
+              : 'En CDMX acompañamos la libertad comercial y el crecimiento estratégico: consultoría comercial, libertad comercial, crecimiento empresarial y estrategia comercial.'}
           </p>
         </div>
       </div>
