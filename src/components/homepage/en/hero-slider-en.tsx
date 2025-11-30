@@ -59,14 +59,14 @@ export function HeroSliderEn() {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <div className="bg-white/60 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-2xl">
+          <div className="bg-white/55 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center">
               Do you deliver an incredible service<br />
               but <span className="text-primary">sales won&apos;t come</span>?
             </h1>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-sm px-8 py-7 rounded-2xl shadow-2xl">
+          <div className="bg-white/55 backdrop-blur-sm px-8 py-7 rounded-2xl shadow-2xl">
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700 text-center mb-5">
               Here&apos;s the problem: you can do exceptional work and still<br className="hidden md:block" />
               struggle to sell.
