@@ -88,12 +88,12 @@ export function SprintSuccessCriteria() {
                     
                     <div className="space-y-4 ml-16">
                       <div>
-                        <p className="font-semibold text-primary mb-1">Por qué es crítico:</p>
+                        <p className="font-semibold text-primary mb-1">Why it's critical:</p>
                         <p className="text-muted-foreground">{criterion.why}</p>
                       </div>
                       
                       <div>
-                        <p className="font-semibold text-primary mb-1">Por qué no es negociable:</p>
+                        <p className="font-semibold text-primary mb-1">Why it's non-negotiable:</p>
                         <p className="text-muted-foreground">{criterion.whyEssential}</p>
                       </div>
                     </div>

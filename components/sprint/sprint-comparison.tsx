@@ -80,12 +80,12 @@ export function SprintComparison() {
                   
                   <div className="lg:col-span-3 space-y-4">
                     <div>
-                      <p className="font-semibold text-primary mb-1">Cómo lo hacemos:</p>
+                      <p className="font-semibold text-primary mb-1">How we do it:</p>
                       <p className="text-lg">{approach.howWeDo}</p>
                     </div>
                     
                     <div>
-                      <p className="font-semibold text-muted-foreground mb-1">Por qué es diferente:</p>
+                      <p className="font-semibold text-muted-foreground mb-1">Why it's different:</p>
                       <p className="text-muted-foreground">{approach.whyDifferent}</p>
                     </div>
                     
