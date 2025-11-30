@@ -124,11 +124,7 @@ export function Footer() {
         
         <div className="mt-8 space-y-2">
           <p className="text-xs text-gray-600">
-            En CDMX acompañamos la libertad comercial y el crecimiento estratégico:{" "}
-            <Link href="/consultoria-comercial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">consultoría comercial</Link>,{" "}
-            <Link href="/libertad-comercial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">libertad comercial</Link>,{" "}
-            <Link href="/crecimiento-empresarial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">crecimiento empresarial</Link> y{" "}
-            <Link href="/estrategia-comercial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">estrategia comercial</Link>.
+            En CDMX acompañamos la libertad comercial y el crecimiento estratégico: consultoría comercial, libertad comercial, crecimiento empresarial y estrategia comercial.
           </p>
         </div>
       </div>
