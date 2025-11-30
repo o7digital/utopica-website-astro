@@ -205,44 +205,4 @@ const lastUpdated = new Date().toLocaleDateString('es-MX', { year: 'numeric', mo
     </div>
   </main>
 
-  <style>
-    :global(nav[data-dark="true"]) {
-      background: linear-gradient(180deg, rgba(10, 16, 28, 0.95) 0%, rgba(10, 16, 28, 0.8) 60%, rgba(10, 16, 28, 0) 100%) !important;
-      border-color: rgba(255, 255, 255, 0.12) !important;
-      color: #fff !important;
-      position: relative;
-      overflow: visible;
-    }
-    :global(nav[data-dark="true"] a),
-    :global(nav[data-dark="true"] span),
-    :global(nav[data-dark="true"] button),
-    :global(nav[data-dark="true"] svg) {
-      color: #fff !important;
-      stroke: #fff !important;
-    }
-    :global(nav[data-dark="true"]::after) {
-      content: '';
-      position: absolute;
-      inset: 0;
-      height: 320px;
-      pointer-events: none;
-      background: linear-gradient(180deg, rgba(10, 16, 28, 0.94) 0%, rgba(10, 16, 28, 0.78) 60%, rgba(10, 16, 28, 0.48) 85%, rgba(10, 16, 28, 0) 100%);
-      z-index: -1;
-    }
-  </style>
-
-  <script>
-    // Header oscuro en degradado al hacer scroll
-    const setNavDark = () => {
-      const nav = document.querySelector('nav');
-      if (!nav) return;
-      nav.dataset.dark = 'true';
-      nav.style.setProperty('backdropFilter', 'blur(12px)', 'important');
-      nav.style.setProperty('background', 'linear-gradient(180deg, rgba(10, 16, 28, 0.95) 0%, rgba(10, 16, 28, 0.8) 60%, rgba(10, 16, 28, 0) 100%)', 'important');
-      nav.style.setProperty('borderColor', 'rgba(255, 255, 255, 0.12)', 'important');
-    };
-
-    window.addEventListener('load', setNavDark);
-    window.addEventListener('scroll', setNavDark, { passive: true });
-  </script>
 </Layout>
