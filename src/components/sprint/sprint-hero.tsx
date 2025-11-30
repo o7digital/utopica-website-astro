@@ -3,7 +3,47 @@ import { CheckCircle, ArrowRight, Calendar, Users } from 'lucide-react';
 import { TrackedCTAButton } from '@/components/ui/tracked-cta-button';
 import { ScrollIndicator } from '@/components/ui/scroll-indicator';
 
-export function SprintHero() {
+type Lang = 'es' | 'en';
+
+const copy = {
+  es: {
+    badge: 'Próximo grupo en Enero 2026',
+    titleTop: 'Haces un Servicio Extraordinario',
+    titleBottom: 'Pero Nadie lo Sabe',
+    description: 'Es hora de que el mercado entienda por qué tus clientes actuales te recomiendan tanto',
+    messageLabel: 'En 4 semanas construyes un mensaje',
+    bullets: [
+      { strong: 'Claro', text: 'como el agua' },
+      { strong: 'Relevante', text: 'para tu cliente ideal' },
+      { strong: 'Único', text: 'imposible de copiar' },
+    ],
+    resultsLabel: 'Que logra',
+    results: ['Generar curiosidad genuina', 'Atraer clientes ideales', 'Acelerar tu ciclo de ventas'],
+    spots: 'Solo 5 lugares por grupo',
+    cta: 'Agendar Sesión de Claridad',
+    investment: 'Inversión: $32,500 MXN + IVA • Garantía: Trabajo hasta lograr tu Claridad',
+  },
+  en: {
+    badge: 'Next cohort in January 2026',
+    titleTop: 'You Deliver an Extraordinary Service',
+    titleBottom: 'But Nobody Knows It',
+    description: 'It is time the market understands why your current clients recommend you so much.',
+    messageLabel: 'In 4 weeks you craft a message',
+    bullets: [
+      { strong: 'Clear', text: 'as water' },
+      { strong: 'Relevant', text: 'for your ideal client' },
+      { strong: 'Unique', text: 'impossible to copy' },
+    ],
+    resultsLabel: 'What it achieves',
+    results: ['Spark genuine curiosity', 'Attract ideal clients', 'Speed up your sales cycle'],
+    spots: 'Only 5 spots per cohort',
+    cta: 'Book a Clarity Session',
+    investment: 'Investment: $32,500 MXN + VAT • Guarantee: We work until you get clarity',
+  },
+} as const;
+
+export function SprintHero({ lang = 'es' }: { lang?: Lang }) {
+  const t = copy[lang];
 
   return (
     <section 
@@ -29,7 +69,7 @@ export function SprintHero() {
             className="inline-flex items-center gap-3 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6"
           >
             <Calendar className="h-5 w-5" />
-            <span className="font-semibold">Próximo grupo en Enero 2026</span>
+            <span className="font-semibold">{t.badge}</span>
           </motion.div>
           
           <motion.h1 
@@ -39,9 +79,9 @@ export function SprintHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="block">Haces un Servicio Extraordinario</span>
+            <span className="block">{t.titleTop}</span>
             <span className="block mt-2 text-primary">
-              Pero Nadie lo Sabe
+              {t.titleBottom}
             </span>
           </motion.h1>
           
@@ -51,7 +91,7 @@ export function SprintHero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Es hora de que el mercado entienda por qué tus clientes actuales te recomiendan tanto
+            {t.description}
           </motion.p>
 
           <motion.div 
@@ -63,40 +103,26 @@ export function SprintHero() {
             <div className="bg-card/50 backdrop-blur rounded-xl p-6 border border-primary/20">
               <div className="grid md:grid-cols-2 gap-6 items-center">
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground mb-2">En 4 semanas construyes un mensaje</p>
+                  <p className="text-sm font-medium text-muted-foreground mb-2">{t.messageLabel}</p>
                   <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-primary rounded-full" aria-hidden="true"></div>
-                      <span className="font-semibold">Claro</span>
-                      <span className="text-sm text-muted-foreground">como el agua</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-primary rounded-full" aria-hidden="true"></div>
-                      <span className="font-semibold">Relevante</span>
-                      <span className="text-sm text-muted-foreground">para tu cliente ideal</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-primary rounded-full" aria-hidden="true"></div>
-                      <span className="font-semibold">Único</span>
-                      <span className="text-sm text-muted-foreground">imposible de copiar</span>
-                    </li>
+                    {t.bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-primary rounded-full" aria-hidden="true"></div>
+                        <span className="font-semibold">{bullet.strong}</span>
+                        <span className="text-sm text-muted-foreground">{bullet.text}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="border-l border-primary/20 pl-6">
-                  <p className="text-sm font-medium text-muted-foreground mb-2">Que logra</p>
+                  <p className="text-sm font-medium text-muted-foreground mb-2">{t.resultsLabel}</p>
                   <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" aria-hidden="true" />
-                      <span className="text-sm">Generar curiosidad genuina</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" aria-hidden="true" />
-                      <span className="text-sm">Atraer clientes ideales</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" aria-hidden="true" />
-                      <span className="text-sm">Acelerar tu ciclo de ventas</span>
-                    </li>
+                    {t.results.map((result, idx) => (
+                      <li key={idx} className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-primary" aria-hidden="true" />
+                        <span className="text-sm">{result}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -110,7 +136,7 @@ export function SprintHero() {
             className="inline-flex items-center gap-2 text-lg mb-6"
           >
             <Users className="h-5 w-5 text-primary" />
-            <span className="font-semibold text-primary">Solo 5 lugares por grupo</span>
+            <span className="font-semibold text-primary">{t.spots}</span>
           </motion.div>
 
           <motion.div 
@@ -126,7 +152,7 @@ export function SprintHero() {
               size="lg"
               className="text-base px-8 py-6 h-auto bg-primary hover:bg-primary/90"
             >
-              Agendar Sesión de Claridad
+              {t.cta}
               <ArrowRight className="ml-2 h-5 w-5" />
             </TrackedCTAButton>
           </motion.div>
@@ -137,7 +163,7 @@ export function SprintHero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4 }}
           >
-            Inversión: $32,500 MXN + IVA • Garantía: Trabajo hasta lograr tu Claridad
+            {t.investment}
           </motion.p>
         </motion.div>
       </div>

@@ -1,34 +1,100 @@
 import { motion } from 'framer-motion';
 import { AlertTriangle, Zap, Users, Sparkles } from 'lucide-react';
 
-const criteria = [
-  {
-    icon: Zap,
-    title: "Velocidad de Implementación",
-    requirement: "Máximo 4 semanas de principio a fin",
-    why: "Porque cada mes sin claridad son ventas perdidas que nunca recuperarás",
-    withoutThis: "Sin velocidad → 6-12 meses de prueba y error mientras pierdes mercado",
-    whyEssential: "El tiempo es tu recurso más valioso. Cada día cuenta."
-  },
-  {
-    icon: Users,
-    title: "Perspectiva Externa + Grupo de Pares",
-    requirement: "Vista desde fuera + otros fundadores en tu situación",
-    why: "Porque cuando estás dentro del frasco, no puedes leer la etiqueta",
-    withoutThis: "Sin perspectiva → Sigues repitiendo los mismos errores sin darte cuenta",
-    whyEssential: "Somos los últimos en ver nuestros puntos ciegos."
-  },
-  {
-    icon: Sparkles,
-    title: "Implementación Práctica Lista",
-    requirement: "Herramientas funcionales, no solo teoría",
-    why: "Porque necesitas un sistema funcionando, no otro PDF en tu disco duro",
-    withoutThis: "Sin implementación → Buenas ideas que nunca se materializan",
-    whyEssential: "La diferencia entre saber y hacer es... hacer."
-  }
-];
+type Lang = 'es' | 'en';
 
-export function SprintSuccessCriteria() {
+const criteria = {
+  es: [
+    {
+      icon: Zap,
+      title: "Velocidad de Implementación",
+      requirement: "Máximo 4 semanas de principio a fin",
+      why: "Porque cada mes sin claridad son ventas perdidas que nunca recuperarás",
+      withoutThis: "Sin velocidad → 6-12 meses de prueba y error mientras pierdes mercado",
+      whyEssential: "El tiempo es tu recurso más valioso. Cada día cuenta."
+    },
+    {
+      icon: Users,
+      title: "Perspectiva Externa + Grupo de Pares",
+      requirement: "Vista desde fuera + otros fundadores en tu situación",
+      why: "Porque cuando estás dentro del frasco, no puedes leer la etiqueta",
+      withoutThis: "Sin perspectiva → Sigues repitiendo los mismos errores sin darte cuenta",
+      whyEssential: "Somos los últimos en ver nuestros puntos ciegos."
+    },
+    {
+      icon: Sparkles,
+      title: "Implementación Práctica Lista",
+      requirement: "Herramientas funcionales, no solo teoría",
+      why: "Porque necesitas un sistema funcionando, no otro PDF en tu disco duro",
+      withoutThis: "Sin implementación → Buenas ideas que nunca se materializan",
+      whyEssential: "La diferencia entre saber y hacer es... hacer."
+    }
+  ],
+  en: [
+    {
+      icon: Zap,
+      title: "Implementation Speed",
+      requirement: "Maximum 4 weeks end to end",
+      why: "Every month without clarity is revenue you never recover.",
+      withoutThis: "Without speed → 6–12 months of trial and error while you lose market share",
+      whyEssential: "Time is your most valuable resource. Every day counts."
+    },
+    {
+      icon: Users,
+      title: "External Perspective + Peer Group",
+      requirement: "Outside view + other founders in your situation",
+      why: "When you're inside the jar, you can't read the label.",
+      withoutThis: "Without perspective → you keep repeating the same mistakes without noticing",
+      whyEssential: "We're the last to see our own blind spots."
+    },
+    {
+      icon: Sparkles,
+      title: "Ready-to-Use Implementation",
+      requirement: "Working tools, not just theory",
+      why: "You need a system that works, not another PDF in your drive.",
+      withoutThis: "Without implementation → good ideas that never materialize",
+      whyEssential: "The difference between knowing and doing is… doing."
+    }
+  ]
+};
+
+const copy = {
+  es: {
+    badge: 'CRITERIOS DE ÉXITO',
+    line1: 'Los 3 Criterios Que Cualquier Solución',
+    line2: 'DEBE Cumplir (O Fracasará)',
+    description:
+      'Después de intentar múltiples caminos, ya sabes que no todas las soluciones son iguales. Estos son los 3 criterios que separan las promesas vacías de los resultados reales.',
+    truthTitle: 'La Verdad Incómoda',
+    truthText:
+      'La mayoría de las "soluciones" fallan en al menos uno de estos criterios. Y un criterio faltante es suficiente para que todo falle.',
+    truthBlocks: [
+      { title: 'Sin Velocidad', text: '= Pérdidas acumuladas' },
+      { title: 'Sin Perspectiva', text: '= Puntos ciegos fatales' },
+      { title: 'Sin Implementación', text: '= Buenas intenciones inútiles' },
+    ],
+    bottomLine: 'Necesitas los 3. Sin excepción. Sin compromiso.',
+  },
+  en: {
+    badge: 'SUCCESS CRITERIA',
+    line1: 'The 3 Criteria Every Solution',
+    line2: 'MUST Meet (Or It Fails)',
+    description:
+      'After trying multiple paths, you know not all solutions are equal. These are the 3 criteria that separate empty promises from real results.',
+    truthTitle: 'The Uncomfortable Truth',
+    truthText:
+      'Most "solutions" fail at least one of these criteria. Missing even one is enough for everything to fail.',
+    truthBlocks: [
+      { title: 'No Speed', text: '= Compounding losses' },
+      { title: 'No Perspective', text: '= Fatal blind spots' },
+      { title: 'No Implementation', text: '= Useless good intentions' },
+    ],
+    bottomLine: 'You need all 3. No exceptions. No compromise.',
+  },
+} as const;
+
+export function SprintSuccessCriteria({ lang = 'es' }: { lang?: Lang }) {
+  const t = copy[lang];
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-b from-background to-primary/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,22 +107,21 @@ export function SprintSuccessCriteria() {
         >
           <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-800 px-4 py-2 rounded-full mb-6">
             <AlertTriangle className="h-5 w-5" />
-            <span className="font-semibold">CRITERIOS DE ÉXITO</span>
+            <span className="font-semibold">{t.badge}</span>
           </div>
           
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            <span className="block">Los 3 Criterios Que Cualquier Solución</span>
-            <span className="block text-primary">DEBE Cumplir (O Fracasará)</span>
+            <span className="block">{t.line1}</span>
+            <span className="block text-primary">{t.line2}</span>
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Después de intentar múltiples caminos, ya sabes que no todas las soluciones son iguales.
-            Estos son los 3 criterios que separan las promesas vacías de los resultados reales.
+            {t.description}
           </p>
         </motion.div>
 
         <div className="space-y-8">
-          {criteria.map((criterion, index) => {
+          {criteria[lang].map((criterion, index) => {
             const Icon = criterion.icon;
             return (
               <motion.div
@@ -126,22 +191,16 @@ export function SprintSuccessCriteria() {
               La mayoría de las "soluciones" fallan en al menos uno de estos criterios.
               Y un criterio faltante es suficiente para que todo falle.
             </p>
-            <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              <div className="bg-white rounded-lg p-4">
-                <p className="font-semibold text-destructive">Sin Velocidad</p>
-                <p className="text-sm text-muted-foreground">= Pérdidas acumuladas</p>
-              </div>
-              <div className="bg-white rounded-lg p-4">
-                <p className="font-semibold text-destructive">Sin Perspectiva</p>
-                <p className="text-sm text-muted-foreground">= Puntos ciegos fatales</p>
-              </div>
-              <div className="bg-white rounded-lg p-4">
-                <p className="font-semibold text-destructive">Sin Implementación</p>
-                <p className="text-sm text-muted-foreground">= Buenas intenciones inútiles</p>
-              </div>
+                <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {t.truthBlocks.map((block, idx) => (
+                <div key={idx} className="bg-white rounded-lg p-4">
+                  <p className="font-semibold text-destructive">{block.title}</p>
+                  <p className="text-sm text-muted-foreground">{block.text}</p>
+                </div>
+              ))}
             </div>
             <p className="text-lg font-semibold mt-6">
-              Necesitas los 3. Sin excepción. Sin compromiso.
+              {t.bottomLine}
             </p>
           </div>
         </motion.div>

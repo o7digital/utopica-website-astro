@@ -1,44 +1,46 @@
----
 import Layout from '../../layouts/Layout.astro';
+import { BreadcrumbListSchema } from '@/components/schema-org';
+import { SprintServiceSchema, FAQSchemaExtended } from '@/components/schema/service-schema';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
+import { SprintHero } from '@/components/sprint/sprint-hero';
+import { SprintProblemStatic } from '@/components/sprint/sprint-problem-static';
+import { SprintProblemDeep } from '@/components/sprint/sprint-problem-deep';
+import { SprintWhyNow } from '@/components/sprint/sprint-why-now';
+import { SprintFailedSolutions } from '@/components/sprint/sprint-failed-solutions';
+import { SprintSuccessCriteria } from '@/components/sprint/sprint-success-criteria';
+import { SprintComparisonStatic } from '@/components/sprint/sprint-comparison-static';
+import { SprintProcess } from '@/components/sprint/sprint-process';
+import { SprintBonuses } from '@/components/sprint/sprint-bonuses';
+import { SprintOffer } from '@/components/sprint/sprint-offer';
+import { SprintCTA } from '@/components/sprint/sprint-cta';
+import { SprintFAQ } from '@/components/sprint/sprint-faq';
 
-const title = 'Clarity Sprint (4 Weeks) | UTOPICA';
-const description = '4-week sprint to unlock commercial clarity, messaging, and tools so your team in CDMX can sell without you.';
+const title = 'Clarity Sprint | 9 Tools in 4 Weeks - UTOPICA';
+const description = 'Get a clear message and 9 proven tools so your team can sell without you. 4-week intensive with a results guarantee for B2B founders.';
+
+const breadcrumbItems = [
+  { name: 'Home', item: 'https://utopica.net/en' },
+  { name: 'Clarity Sprint', item: 'https://utopica.net/en/clarity-sprint' },
+];
 ---
 
 <Layout title={title} description={description}>
-  <section class="max-w-5xl mx-auto px-4 py-16 space-y-10 text-gray-900">
-    <header class="space-y-3">
-      <p class="text-sm font-semibold text-primary uppercase tracking-wide">4-week program</p>
-      <h1 class="text-3xl md:text-4xl font-bold leading-tight">Clarity Sprint for B2B founders in Mexico City</h1>
-      <p class="text-base md:text-lg text-gray-700">
-        Get a clear message, a lean sales motion, and tools your team will actually use. Designed for founders who need their team to sell without constant supervision.
-      </p>
-    </header>
+  <BreadcrumbListSchema items={breadcrumbItems} client:only="react" />
+  <SprintServiceSchema client:only="react" />
+  <FAQSchemaExtended client:only="react" />
 
-    <div class="space-y-8 text-base leading-relaxed md:text-lg">
-      <div class="space-y-2">
-        <h2 class="text-2xl font-semibold">What you get</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Crystal-clear positioning, offer, and objection handling.</li>
-          <li>Sales scripts, outreach flows, and meeting structures ready to deploy.</li>
-          <li>Lightweight dashboards and rituals so reps ship every week.</li>
-          <li>Coaching to build autonomy and initiative in your team.</li>
-        </ul>
-      </div>
+  <ScrollProgress client:load />
 
-      <div class="space-y-2">
-        <h2 class="text-2xl font-semibold">Why it works</h2>
-        <p>
-          We remove friction, reduce over-control, and align incentives. Teams move faster, learn from the market, and close more without waiting for approvals.
-        </p>
-      </div>
-
-      <div class="space-y-2">
-        <h2 class="text-2xl font-semibold">For founders in CDMX</h2>
-        <p>
-          Built for Mexico City B2B companies that want predictable revenue without adding bureaucracy. Let’s make your team autonomous and effective.
-        </p>
-      </div>
-    </div>
-  </section>
+  <SprintHero lang="en" client:load />
+  <SprintProblemStatic lang="en" client:visible />
+  <SprintProblemDeep lang="en" client:visible />
+  <SprintWhyNow lang="en" client:visible />
+  <SprintFailedSolutions lang="en" client:visible />
+  <SprintSuccessCriteria lang="en" client:visible />
+  <SprintComparisonStatic lang="en" client:visible />
+  <SprintProcess lang="en" client:visible />
+  <SprintBonuses lang="en" client:visible />
+  <SprintOffer lang="en" client:visible />
+  <SprintCTA lang="en" client:visible />
+  <SprintFAQ lang="en" client:visible />
 </Layout>
