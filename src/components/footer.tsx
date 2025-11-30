@@ -121,6 +121,15 @@ export function Footer() {
             </div>
           </div>
         </div>
+        
+        <div className="mt-8 space-y-2">
+          <p className="text-xs text-gray-600">
+            libertad comercial CDMX, autonomía comercial CDMX, consultoría comercial CDMX, crecimiento empresarial CDMX, estrategia comercial CDMX, organización adaptativa CDMX, inteligencia comercial humana, desempeño emergente CDMX, innovación comercial Ciudad de México, autonomía estratégica empresarial, equipos comerciales autónomos, aceleración comercial CDMX, optimización comercial CDMX, crecimiento orgánico CDMX, transformación comercial CDMX, cultura de iniciativa comercial, reducción de fricción operacional, estructura organizacional flexible, mejora de desempeño comercial, evolución comercial humana, agilidad estratégica CDMX, experimentación comercial, modelo comercial adaptativo, liderazgo comercial moderno, libertad organizacional CDMX, ejecución ágil CDMX, inteligencia de mercado CDMX, mentalidad emprendedora CDMX, exploración comercial, rendimiento comercial humano
+          </p>
+          <div className="sr-only" aria-hidden="true">
+            libertad comercial CDMX, autonomía comercial CDMX, consultoría comercial CDMX, crecimiento empresarial CDMX, estrategia comercial CDMX, organización adaptativa CDMX, inteligencia comercial humana, desempeño emergente CDMX, innovación comercial Ciudad de México, autonomía estratégica empresarial, equipos comerciales autónomos, aceleración comercial CDMX, optimización comercial CDMX, crecimiento orgánico CDMX, transformación comercial CDMX, cultura de iniciativa comercial, reducción de fricción operacional, estructura organizacional flexible, mejora de desempeño comercial, evolución comercial humana, agilidad estratégica CDMX, experimentación comercial, modelo comercial adaptativo, libertad organizacional CDMX, ejecución ágil CDMX, inteligencia de mercado CDMX, mentalidad emprendedora CDMX, exploración comercial, rendimiento comercial humano, desempeño estratégico CDMX.
+          </div>
+        </div>
       </div>
     </footer>
   );

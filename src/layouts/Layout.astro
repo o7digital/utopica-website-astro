@@ -10,6 +10,20 @@ interface Props {
 
 const { title, description } = Astro.props;
 const pathname = Astro.url.pathname;
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'UTOPICA',
+  description: 'Consultoría en libertad comercial, autonomía humana y crecimiento estratégico para empresas en CDMX.',
+  url: 'https://utopica.net/',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Ciudad de México',
+    addressCountry: 'MX'
+  },
+  areaServed: 'CDMX',
+  keywords: 'libertad comercial CDMX, autonomía comercial, crecimiento estratégico CDMX, desempeño comercial humano, consultoría CDMX, organización adaptativa, innovación comercial CDMX, inteligencia comercial'
+};
 ---
 
 <!doctype html>
@@ -30,6 +44,10 @@ const pathname = Astro.url.pathname;
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <script type="application/ld+json">
+      {JSON.stringify(organizationLd)}
+    </script>
   </head>
   <body>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-primary focus:text-primary-foreground">
