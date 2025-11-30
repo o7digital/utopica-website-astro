@@ -74,12 +74,12 @@ export function Footer({ pathname }: FooterProps = {}) {
             <h3 className="font-semibold text-gray-900 mb-4">LEGAL</h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={isEnglish ? '/en/privacy-notice' : '/aviso-privacidad'}
                   className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
                   {isEnglish ? 'Privacy Notice' : 'Aviso de Privacidad'}
-                </a>
+                </Link>
               </li>
               <li>
                 <a
