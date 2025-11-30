@@ -4,7 +4,10 @@ import { Logo } from '@/components/ui/logo';
 
 export function Footer() {
   return (
-    <footer className="bg-gray-50 border-t" role="contentinfo">
+    <footer
+      className="bg-[rgb(24,24,24)] border-t border-[#242424] text-gray-100"
+      role="contentinfo"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
@@ -12,7 +15,7 @@ export function Footer() {
             <Link href="/" aria-label="Ir a la página de inicio">
               <Logo className="w-[140px] h-[36px]" />
             </Link>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-300">
               Libertad comercial para fundadores B2B
             </p>
             <p className="text-xs text-gray-500">
@@ -22,28 +25,28 @@ export function Footer() {
 
           {/* Compañía */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">COMPAÑÍA</h3>
+            <h3 className="font-semibold text-white mb-4">COMPAÑÍA</h3>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  href="/" 
-                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                <Link
+                  href="/"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/sprint-claridad-comercial" 
-                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                <Link
+                  href="/sprint-claridad-comercial"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
                   Sprint de Claridad
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/equipo" 
-                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                <Link
+                  href="/equipo"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
                   Equipo
                 </Link>
@@ -53,20 +56,20 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">LEGAL</h3>
+            <h3 className="font-semibold text-white mb-4">LEGAL</h3>
             <ul className="space-y-3">
               <li>
-                <a 
-                  href="#" 
-                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                <a
+                  href="#"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
                   Aviso de Privacidad
                 </a>
               </li>
               <li>
-                <a 
-                  href="#" 
-                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                <a
+                  href="#"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
                   Condiciones Generales
                 </a>
@@ -76,15 +79,15 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">NEWSLETTER</h3>
-            <p className="text-sm text-gray-600 mb-4">
+            <h3 className="font-semibold text-white mb-4">NEWSLETTER</h3>
+            <p className="text-sm text-gray-300 mb-4">
               Sé el primero en recibir noticias sobre tendencias, promociones y más
             </p>
             <form className="space-y-2">
               <input
                 type="email"
                 placeholder="Tu email"
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-2 text-sm bg-[#1f1f1f] text-gray-100 placeholder-gray-500 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#181818]"
                 aria-label="Tu dirección de email"
               />
               <button
@@ -97,20 +100,20 @@ export function Footer() {
             
             {/* Social links */}
             <div className="flex items-center gap-4 mt-6" aria-label="Enlaces de redes sociales">
-              <a 
-                href="https://www.linkedin.com/company/somosutopica/" 
+              <a
+                href="https://www.linkedin.com/company/somosutopica/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#181818] rounded-sm"
                 aria-label="Visitar nuestro perfil de LinkedIn (se abre en una nueva ventana)"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.youtube.com/@UtópicaMx" 
+              <a
+                href="https://www.youtube.com/@UtópicaMx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#181818] rounded-sm"
                 aria-label="Visitar nuestro canal de YouTube (se abre en una nueva ventana)"
               >
                 <Youtube className="h-5 w-5" />
