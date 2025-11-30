@@ -68,7 +68,7 @@ export function HeroSlider() {
           className="space-y-6"
         >
           {/* First Block - Main Title */}
-          <div className="bg-white/60 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-2xl">
+          <div className="bg-white/55 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center">
               ¿Ofreces un Servicio Increíble<br />
               pero las <span className="text-primary">Ventas no Llegan</span>?
@@ -76,8 +76,8 @@ export function HeroSlider() {
           </div>
 
           {/* Second Block - Everything else */}
-          <div className="bg-white/60 backdrop-blur-sm px-8 py-7 rounded-2xl shadow-2xl">
-            {/* Subtitle */}
+          <div className="bg-white/55 backdrop-blur-sm px-8 py-7 rounded-2xl shadow-2xl">
+            {/* Subtitle */
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700 text-center mb-5">
               Aquí está el problema: puedes hacer un trabajo excepcional y aún<br className="hidden md:block" />
               así tener dificultades para vender.
