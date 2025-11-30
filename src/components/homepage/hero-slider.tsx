@@ -77,7 +77,7 @@ export function HeroSlider() {
 
           {/* Second Block - Everything else */}
           <div className="bg-white/55 backdrop-blur-sm px-8 py-7 rounded-2xl shadow-2xl">
-            {/* Subtitle */
+            {/* Subtitle */}
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700 text-center mb-5">
               Aquí está el problema: puedes hacer un trabajo excepcional y aún<br className="hidden md:block" />
               así tener dificultades para vender.
