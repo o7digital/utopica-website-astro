@@ -17,24 +17,46 @@ const mainRoutesEn = [
   { href: "/en/team", label: "Team" },
 ];
 
+const esToEnPaths: Record<string, string> = {
+  "/": "/en",
+  "/sprint-claridad-comercial": "/en/clarity-sprint",
+  "/equipo": "/en/team",
+  "/consultoria-comercial-cdmx": "/en/commercial-consulting-mexico-city",
+  "/libertad-comercial-cdmx": "/en/commercial-freedom-mexico-city",
+  "/crecimiento-empresarial-cdmx": "/en/business-growth-mexico-city",
+  "/estrategia-comercial-cdmx": "/en/commercial-strategy-mexico-city",
+  "/aviso-privacidad": "/en/privacy-notice",
+};
+
+const enToEsPaths: Record<string, string> = Object.fromEntries(
+  Object.entries(esToEnPaths).map(([esPath, enPath]) => [enPath, esPath])
+);
+
+const normalizePath = (path: string) => {
+  if (!path) return "/";
+  if (path !== "/" && path.endsWith("/")) return path.slice(0, -1);
+  return path;
+};
+
 interface NavigationProps {
   pathname?: string;
 }
 
 export function Navigation({ pathname = "/" }: NavigationProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
-  const isEnglish = pathname.startsWith("/en");
+  const normalizedPath = normalizePath(pathname);
+  const isEnglish = normalizedPath.startsWith("/en");
   const routes = isEnglish ? mainRoutesEn : mainRoutesEs;
   const toggleHref = isEnglish
-    ? pathname.replace(/^\/en/, "") || "/"
-    : `/en${pathname === "/" ? "" : pathname}`;
+    ? enToEsPaths[normalizedPath] || normalizePath(normalizedPath.replace(/^\/en/, "") || "/")
+    : esToEnPaths[normalizedPath] || `/en${normalizedPath === "/" ? "" : normalizedPath}`;
 
   return (
     <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b" role="navigation" aria-label="Navegación principal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" aria-label="Ir a la página de inicio">
+            <Link href={isEnglish ? "/en" : "/"} aria-label={isEnglish ? "Go to homepage" : "Ir a la página de inicio"}>
               <Logo className="w-[140px] h-[36px]" />
             </Link>
           </div>
