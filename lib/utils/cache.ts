@@ -35,58 +35,11 @@ export function createCachedFunction<T extends any[], R>(
 }
 
 /**
- * Cache workshop data with appropriate tagging
- */
-export const cacheWorkshopData = <T>(
-  fn: () => Promise<T>,
-  additionalTags: string[] = []
-) => {
-  return createCachedFunction(
-    fn,
-    [CACHE_TAGS.WORKSHOPS, ...additionalTags],
-    CACHE_DURATIONS.WORKSHOPS
-  );
-};
-
-/**
- * Cache page data with specific tags
- */
-export const cachePageData = <T>(
-  fn: () => Promise<T>,
-  pageTag: string,
-  duration?: number
-) => {
-  return createCachedFunction(
-    fn,
-    [pageTag],
-    duration
-  );
-};
-
-/**
  * Generate cache key for consistent caching across the app
  */
 export function generateCacheKey(prefix: string, ...params: (string | number)[]): string {
   return `${prefix}:${params.join(':')}`;
 }
-
-/**
- * Cache configuration presets for different content types
- */
-export const CACHE_PRESETS = {
-  STATIC_CONTENT: {
-    revalidate: CACHE_DURATIONS.TEAM,
-    tags: ['static']
-  },
-  DYNAMIC_CONTENT: {
-    revalidate: CACHE_DURATIONS.WORKSHOPS,
-    tags: ['dynamic']
-  },
-  SEMI_STATIC: {
-    revalidate: CACHE_DURATIONS.SPRINT,
-    tags: ['semi-static']
-  }
-} as const;
 
 /**
  * Cache invalidation patterns for different content types
@@ -201,49 +154,6 @@ export function generateAdvancedETag(
   const version = metadata.version || '1';
   
   return `"${source}-${version}-${contentHash}-${timestamp}"`;
-}
-
-/**
- * Cache warming utility for critical endpoints (legacy)
- * @deprecated Use warmCriticalCaches from @/lib/cache/warming instead
- */
-export async function warmCriticalCaches(): Promise<{
-  warmed: string[];
-  failed: string[];
-  duration: number;
-}> {
-  const startTime = Date.now();
-  const warmed: string[] = [];
-  const failed: string[] = [];
-  
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-  
-  for (const endpoint of CACHE_WARMING_ENDPOINTS) {
-    try {
-      const response = await fetch(`${baseUrl}${endpoint}`, {
-        method: 'GET',
-        headers: {
-          'User-Agent': 'Cache-Warmer/1.0',
-          'X-Cache-Warming': 'true'
-        }
-      });
-      
-      if (response.ok) {
-        warmed.push(endpoint);
-      } else {
-        failed.push(endpoint);
-      }
-    } catch (error) {
-      console.error(`Failed to warm cache for ${endpoint}:`, error);
-      failed.push(endpoint);
-    }
-  }
-  
-  return {
-    warmed,
-    failed,
-    duration: Date.now() - startTime
-  };
 }
 
 /**

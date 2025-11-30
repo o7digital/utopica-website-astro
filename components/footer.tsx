@@ -58,12 +58,20 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">LEGAL</h3>
             <ul className="space-y-3">
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  href="/aviso-privacidad" 
                   className="text-sm text-gray-600 hover:text-primary transition-colors"
                 >
                   Aviso de Privacidad
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/privacy-notice" 
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
+                  Privacy Notice
+                </Link>
               </li>
               <li>
                 <a 
