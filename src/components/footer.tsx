@@ -124,11 +124,12 @@ export function Footer() {
         
         <div className="mt-8 space-y-2">
           <p className="text-xs text-gray-600">
-            libertad comercial CDMX • autonomía comercial CDMX • consultoría comercial CDMX • estrategia comercial CDMX • crecimiento empresarial CDMX • inteligencia comercial humana • organización adaptativa • innovación comercial • desempeño emergente
+            En CDMX acompañamos la libertad comercial y el crecimiento estratégico:{" "}
+            <Link href="/consultoria-comercial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">consultoría comercial</Link>,{" "}
+            <Link href="/libertad-comercial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">libertad comercial</Link>,{" "}
+            <Link href="/crecimiento-empresarial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">crecimiento empresarial</Link> y{" "}
+            <Link href="/estrategia-comercial-cdmx" className="underline underline-offset-2 text-gray-700 hover:text-primary transition-colors">estrategia comercial</Link>.
           </p>
-          <div style={{ visibility: 'hidden', height: 0, overflow: 'hidden' }} aria-hidden="true">
-            libertad comercial CDMX, autonomía comercial CDMX, consultoría comercial CDMX, estrategia comercial CDMX, crecimiento empresarial CDMX, organización adaptativa CDMX, inteligencia comercial humana, desempeño emergente CDMX, innovación comercial Ciudad de México, autonomía estratégica empresarial, equipos comerciales autónomos, aceleración comercial CDMX, optimización comercial CDMX, crecimiento orgánico CDMX, transformación comercial CDMX, cultura de iniciativa comercial, reducción de fricción operacional, estructura organizacional flexible, mejora de desempeño comercial, evolución comercial humana, agilidad estratégica CDMX, experimentación comercial, modelo comercial adaptativo, libertad organizacional CDMX, ejecución ágil CDMX, inteligencia de mercado CDMX, mentalidad emprendedora CDMX, exploración comercial, rendimiento comercial humano, desempeño estratégico CDMX.
-          </div>
         </div>
       </div>
     </footer>
