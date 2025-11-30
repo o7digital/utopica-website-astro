@@ -205,22 +205,32 @@ const lastUpdated = new Date().toLocaleDateString('es-MX', { year: 'numeric', mo
     </div>
   </main>
 
+  <style>
+    :global(nav[data-dark="true"]) {
+      background: linear-gradient(180deg, rgba(10, 16, 28, 0.95) 0%, rgba(10, 16, 28, 0.8) 60%, rgba(10, 16, 28, 0) 100%) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      color: #fff !important;
+    }
+    :global(nav[data-dark="true"] a),
+    :global(nav[data-dark="true"] span),
+    :global(nav[data-dark="true"] button),
+    :global(nav[data-dark="true"] svg) {
+      color: #fff !important;
+      stroke: #fff !important;
+    }
+  </style>
+
   <script>
-    // Add gradient background to header on scroll
-    const handleScroll = () => {
+    // Header oscuro en degradado al hacer scroll
+    const toggleNavDark = () => {
       const nav = document.querySelector('nav');
-      if (nav) {
-        if (window.scrollY > 50) {
-          nav.style.background = 'linear-gradient(to bottom, rgb(243 244 246), rgb(249 250 251 / 0.8))';
-          nav.style.backdropFilter = 'blur(12px)';
-        } else {
-          nav.style.background = '';
-          nav.style.backdropFilter = '';
-        }
-      }
+      if (!nav) return;
+      const isDark = window.scrollY > 24;
+      nav.dataset.dark = isDark ? 'true' : 'false';
+      nav.style.backdropFilter = isDark ? 'blur(12px)' : '';
     };
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('load', handleScroll);
+    window.addEventListener('scroll', toggleNavDark);
+    window.addEventListener('load', toggleNavDark);
   </script>
 </Layout>
