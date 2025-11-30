@@ -5,7 +5,7 @@ import { Logo } from '@/components/ui/logo';
 export function Footer() {
   return (
     <footer
-      className="bg-[rgb(24,24,24)] border-t border-[#242424] text-gray-100"
+      className="bg-[rgb(34,34,34)] border-t border-[#2a2a2a] text-gray-100"
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
