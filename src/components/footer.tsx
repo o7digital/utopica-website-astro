@@ -5,7 +5,7 @@ import { Logo } from '@/components/ui/logo';
 export function Footer() {
   return (
     <footer
-      className="bg-[rgb(34,34,34)] border-t border-[#2a2a2a] text-gray-100"
+      className="bg-[#f2f2f2] border-t border-gray-200 text-gray-900"
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -15,7 +15,7 @@ export function Footer() {
             <Link href="/" aria-label="Ir a la página de inicio">
               <Logo className="w-[140px] h-[36px]" />
             </Link>
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-gray-700">
               Libertad comercial para fundadores B2B
             </p>
             <p className="text-xs text-gray-500">
@@ -25,12 +25,12 @@ export function Footer() {
 
           {/* Compañía */}
           <div>
-            <h3 className="font-semibold text-white mb-4">COMPAÑÍA</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">COMPAÑÍA</h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                  className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
                   Inicio
                 </Link>
@@ -38,7 +38,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/sprint-claridad-comercial"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                  className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
                   Sprint de Claridad
                 </Link>
@@ -46,7 +46,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/equipo"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                  className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
                   Equipo
                 </Link>
@@ -56,12 +56,12 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold text-white mb-4">LEGAL</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">LEGAL</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                  className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
                   Aviso de Privacidad
                 </a>
@@ -69,7 +69,7 @@ export function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                  className="text-sm text-gray-700 hover:text-primary transition-colors"
                 >
                   Condiciones Generales
                 </a>
@@ -79,15 +79,15 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-semibold text-white mb-4">NEWSLETTER</h3>
-            <p className="text-sm text-gray-300 mb-4">
+            <h3 className="font-semibold text-gray-900 mb-4">NEWSLETTER</h3>
+            <p className="text-sm text-gray-700 mb-4">
               Sé el primero en recibir noticias sobre tendencias, promociones y más
             </p>
             <form className="space-y-2">
               <input
                 type="email"
                 placeholder="Tu email"
-                className="w-full px-4 py-2 text-sm bg-[#1f1f1f] text-gray-100 placeholder-gray-500 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#181818]"
+                className="w-full px-4 py-2 text-sm bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#f2f2f2]"
                 aria-label="Tu dirección de email"
               />
               <button
@@ -104,7 +104,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/somosutopica/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#181818] rounded-sm"
+                className="text-gray-600 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#f2f2f2] rounded-sm"
                 aria-label="Visitar nuestro perfil de LinkedIn (se abre en una nueva ventana)"
               >
                 <Linkedin className="h-5 w-5" />
@@ -113,7 +113,7 @@ export function Footer() {
                 href="https://www.youtube.com/@UtópicaMx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#181818] rounded-sm"
+                className="text-gray-600 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#f2f2f2] rounded-sm"
                 aria-label="Visitar nuestro canal de YouTube (se abre en una nueva ventana)"
               >
                 <Youtube className="h-5 w-5" />
