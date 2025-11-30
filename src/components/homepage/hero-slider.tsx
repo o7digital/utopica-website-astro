@@ -51,7 +51,7 @@ export function HeroSlider() {
                 alt="Hero background"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </picture>
             <div className="absolute inset-0 bg-black/20" />
