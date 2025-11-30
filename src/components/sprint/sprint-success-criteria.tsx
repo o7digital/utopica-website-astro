@@ -74,6 +74,12 @@ const copy = {
       { title: 'Sin Implementación', text: '= Buenas intenciones inútiles' },
     ],
     bottomLine: 'Necesitas los 3. Sin excepción. Sin compromiso.',
+    labels: {
+      criterion: 'Criterio',
+      critical: 'Por qué es crítico:',
+      nonNegotiable: 'Por qué no es negociable:',
+      without: 'Sin este criterio:',
+    },
   },
   en: {
     badge: 'SUCCESS CRITERIA',
@@ -90,6 +96,12 @@ const copy = {
       { title: 'No Implementation', text: '= Useless good intentions' },
     ],
     bottomLine: 'You need all 3. No exceptions. No compromise.',
+    labels: {
+      criterion: 'Criterion',
+      critical: "Why it's critical:",
+      nonNegotiable: "Why it's non-negotiable:",
+      without: 'Without this criterion:',
+    },
   },
 } as const;
 
@@ -141,7 +153,7 @@ export function SprintSuccessCriteria({ lang = 'es' }: { lang?: Lang }) {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold mb-2">
-                          Criterio #{index + 1}: {criterion.title}
+                          {t.labels.criterion} #{index + 1}: {criterion.title}
                         </h3>
                         <p className="text-lg font-medium text-foreground">
                           {criterion.requirement}
@@ -151,12 +163,12 @@ export function SprintSuccessCriteria({ lang = 'es' }: { lang?: Lang }) {
                     
                     <div className="space-y-4 ml-16">
                       <div>
-                        <p className="font-semibold text-primary mb-1">Why it's critical:</p>
+                        <p className="font-semibold text-primary mb-1">{t.labels.critical}</p>
                         <p className="text-muted-foreground">{criterion.why}</p>
                       </div>
                       
                       <div>
-                        <p className="font-semibold text-primary mb-1">Why it's non-negotiable:</p>
+                        <p className="font-semibold text-primary mb-1">{t.labels.nonNegotiable}</p>
                         <p className="text-muted-foreground">{criterion.whyEssential}</p>
                       </div>
                     </div>
@@ -166,7 +178,7 @@ export function SprintSuccessCriteria({ lang = 'es' }: { lang?: Lang }) {
                   <div className="lg:col-span-2 bg-destructive/5 p-8 border-l">
                     <h4 className="font-semibold text-destructive mb-3 flex items-center gap-2">
                       <AlertTriangle className="h-5 w-5" />
-                      Sin este criterio:
+                      {t.labels.without}
                     </h4>
                     <p className="text-muted-foreground">
                       {criterion.withoutThis}
@@ -186,10 +198,9 @@ export function SprintSuccessCriteria({ lang = 'es' }: { lang?: Lang }) {
           className="mt-16"
         >
           <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border-2 border-orange-200 text-center">
-            <h3 className="text-2xl font-bold mb-4">La Verdad Incómoda</h3>
+            <h3 className="text-2xl font-bold mb-4">{t.truthTitle}</h3>
             <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-              La mayoría de las "soluciones" fallan en al menos uno de estos criterios.
-              Y un criterio faltante es suficiente para que todo falle.
+              {t.truthText}
             </p>
                 <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {t.truthBlocks.map((block, idx) => (
