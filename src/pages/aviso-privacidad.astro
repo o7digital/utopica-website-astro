@@ -210,6 +210,8 @@ const lastUpdated = new Date().toLocaleDateString('es-MX', { year: 'numeric', mo
       background: linear-gradient(180deg, rgba(10, 16, 28, 0.95) 0%, rgba(10, 16, 28, 0.8) 60%, rgba(10, 16, 28, 0) 100%) !important;
       border-color: rgba(255, 255, 255, 0.12) !important;
       color: #fff !important;
+      position: relative;
+      overflow: visible;
     }
     :global(nav[data-dark="true"] a),
     :global(nav[data-dark="true"] span),
@@ -217,6 +219,15 @@ const lastUpdated = new Date().toLocaleDateString('es-MX', { year: 'numeric', mo
     :global(nav[data-dark="true"] svg) {
       color: #fff !important;
       stroke: #fff !important;
+    }
+    :global(nav[data-dark="true"]::after) {
+      content: '';
+      position: absolute;
+      inset: 0;
+      height: 260px;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(10, 16, 28, 0.92) 0%, rgba(10, 16, 28, 0.72) 55%, rgba(10, 16, 28, 0.42) 78%, rgba(10, 16, 28, 0) 100%);
+      z-index: -1;
     }
   </style>
 
