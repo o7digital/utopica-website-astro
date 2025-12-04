@@ -10,38 +10,6 @@ interface Props {
 
 const { title, description } = Astro.props;
 const pathname = Astro.url.pathname;
-const organizationLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'UTOPICA',
-  description: 'Consultoría en libertad comercial, autonomía humana y crecimiento estratégico para empresas en CDMX.',
-  url: 'https://utopica.net/',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Ciudad de México',
-    addressCountry: 'MX'
-  },
-  areaServed: 'CDMX',
-  keywords: 'libertad comercial CDMX, consultoría comercial CDMX, crecimiento empresarial CDMX, desempeño comercial humano, autonomía estratégica, inteligencia de mercado'
-};
-
-const organizationLdEn = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'UTOPICA',
-  description: 'Commercial freedom consulting, human autonomy, and strategic growth for companies in Mexico City.',
-  url: 'https://utopica.net/en',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Mexico City',
-    addressCountry: 'MX'
-  },
-  areaServed: 'Mexico City',
-  keywords: 'commercial freedom Mexico City, commercial consulting Mexico City, business growth CDMX, human commercial performance, strategic autonomy, market intelligence'
-};
-
-const isEnglish = pathname.startsWith('/en');
-const ldJson = isEnglish ? organizationLdEn : organizationLd;
 ---
 
 <!doctype html>
@@ -62,19 +30,6 @@ const ldJson = isEnglish ? organizationLdEn : organizationLd;
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34LFZ5BH4M"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-34LFZ5BH4M');
-    </script>
-    
-    <script type="application/ld+json">
-      {JSON.stringify(ldJson)}
-    </script>
   </head>
   <body>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-primary focus:text-primary-foreground">
@@ -89,6 +44,6 @@ const ldJson = isEnglish ? organizationLdEn : organizationLd;
     </main>
     
     <!-- Footer React Component -->
-    <Footer client:load pathname={pathname} />
+    <Footer client:load />
   </body>
 </html>

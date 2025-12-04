@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
-import { HeroSlider } from '@/components/homepage/hero-slider';
+import { HeroSection } from '@/components/homepage/hero-section';
 import { StakesSectionStatic } from '@/components/homepage/stakes-section-static';
 import { CommercialInjusticeSection } from '@/components/homepage/commercial-injustice-section';
 import { ClarityPathSectionStatic } from '@/components/homepage/clarity-path-section-static';
@@ -14,7 +14,7 @@ const description = 'Obtén un mensaje claro y 9 herramientas probadas para que 
 <Layout title={title} description={description}>
   <ScrollProgress client:load />
   
-  <HeroSlider client:load />
+  <HeroSection client:load />
   <StakesSectionStatic client:visible />
   <CommercialInjusticeSection client:visible />
   <ClarityPathSectionStatic client:visible />
