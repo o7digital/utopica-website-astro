@@ -150,7 +150,6 @@
     "@astrojs/tailwind": "^6.0.2",
     "@axe-core/playwright": "^4.10.2",
     "@lhci/cli": "^0.12.0",
-    "@netlify/plugin-nextjs": "^5.9.4",
     "@testing-library/jest-dom": "^6.6.4",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.8.4",
