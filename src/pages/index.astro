@@ -14,7 +14,7 @@ const description = 'Obtén un mensaje claro y 9 herramientas probadas para que 
 <Layout title={title} description={description}>
   <ScrollProgress client:load />
   
-  <HeroSlider client:load />
+  <HeroSlider client:only="react" />
   <StakesSectionStatic client:visible />
   <CommercialInjusticeSection client:visible />
   <ClarityPathSectionStatic client:visible />
