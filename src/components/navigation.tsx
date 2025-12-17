@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Link } from "@/components/ui/Link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/logo";
@@ -20,6 +20,18 @@ interface NavigationProps {
 
 export function Navigation({ pathname = "/" }: NavigationProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
+  const isEnglish = pathname?.startsWith('/en');
+  
+  // Get the alternate language URL
+  const getAlternateUrl = () => {
+    if (isEnglish) {
+      // Remove /en prefix
+      return pathname?.replace(/^\/en/, '') || '/';
+    } else {
+      // Add /en prefix
+      return '/en' + (pathname === '/' ? '' : pathname);
+    }
+  };
 
   return (
     <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b" role="navigation" aria-label="Navegación principal">
@@ -47,6 +59,17 @@ export function Navigation({ pathname = "/" }: NavigationProps = {}) {
                 {route.label}
               </Link>
             ))}
+            
+            {/* Language Switcher */}
+            <Link
+              href={getAlternateUrl()}
+              className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md border border-gray-200 hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label={isEnglish ? "Cambiar a español" : "Switch to English"}
+            >
+              <Globe className="h-4 w-4" />
+              {isEnglish ? 'ES' : 'EN'}
+            </Link>
+            
             <Link
               href={process.env.NEXT_PUBLIC_RECLAIM_URL || "https://app.reclaim.ai/m/gael/sesion-estrategica-claridad-comercial"}
               target="_blank"
@@ -104,6 +127,18 @@ export function Navigation({ pathname = "/" }: NavigationProps = {}) {
                   {route.label}
                 </Link>
               ))}
+              
+              {/* Language Switcher Mobile */}
+              <Link
+                href={getAlternateUrl()}
+                className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 border border-gray-200 mx-3"
+                onClick={() => setIsOpen(false)}
+                role="menuitem"
+              >
+                <Globe className="h-4 w-4" />
+                {isEnglish ? 'Cambiar a Español' : 'Switch to English'}
+              </Link>
+              
               <Link
                 href={process.env.NEXT_PUBLIC_RECLAIM_URL || "https://app.reclaim.ai/m/gael/sesion-estrategica-claridad-comercial"}
                 target="_blank"
