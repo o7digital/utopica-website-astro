@@ -57,10 +57,10 @@ export function Footer({ lang = 'es' }: FooterProps = {}) {
                 Outsourced business development, sales coaching and sales growth consulting in Mexico City: Polanco, Reforma, Santa Fe, Roma Norte and Condesa.
               </p>
               
-              {/* Invisible SEO keywords - English */}
-              <div style={{ visibility: 'hidden', height: 0, overflow: 'hidden' }} aria-hidden="true">
+              {/* Visible SEO keywords - English */}
+              <p className="text-sm text-gray-600 text-center leading-relaxed mt-4">
                 outsourced business development CDMX, outsourced business development Mexico City, commercial consulting CDMX, commercial consulting Mexico City, sales coach CDMX, sales coaching Mexico City, sales growth CDMX, sales growth in Mexico City, sales training CDMX, commercial training Mexico City, B2B sales consulting CDMX, B2B sales Mexico City, sales team optimization CDMX, commercial strategy CDMX, sales strategy Mexico City, sales department outsourcing CDMX, commercial outsourcing Mexico City, B2B revenue generation CDMX, sales scaling CDMX, commercial performance improvement CDMX, sales consultants CDMX, commercial advisory Mexico City, sales team training CDMX, commercial support CDMX, commercial transformation CDMX
-              </div>
+              </p>
             </>
           ) : (
             <>
@@ -69,10 +69,10 @@ export function Footer({ lang = 'es' }: FooterProps = {}) {
                 Desarrollo comercial externalizado, coaching de ventas e incremento de ventas en Ciudad de México: Polanco, Reforma, Santa Fe, Roma Norte y Condesa.
               </p>
               
-              {/* Invisible SEO keywords - Spanish */}
-              <div style={{ visibility: 'hidden', height: 0, overflow: 'hidden' }} aria-hidden="true">
+              {/* Visible SEO keywords - Spanish */}
+              <p className="text-sm text-gray-600 text-center leading-relaxed mt-4">
                 desarrollo comercial externalizado CDMX, desarrollo comercial externalizado Ciudad de México, consultoría comercial CDMX, consultoría comercial Ciudad de México, coach de ventas CDMX, coaching de ventas Ciudad de México, incremento de ventas CDMX, incremento de ventas en Ciudad de México, capacitación en ventas CDMX, capacitación comercial Ciudad de México, consultoría de ventas B2B CDMX, ventas B2B Ciudad de México, optimización de equipos de ventas CDMX, estrategia comercial CDMX, estrategia de ventas Ciudad de México, externalización del área comercial CDMX, outsourcing comercial Ciudad de México, generación de ingresos B2B CDMX, escalamiento de ventas CDMX, mejora del rendimiento comercial CDMX, consultores de ventas CDMX, asesoría comercial Ciudad de México, formación de equipos de ventas CDMX, acompañamiento comercial CDMX, transformación comercial CDMX
-              </div>
+              </p>
             </>
           )}
         </div>
