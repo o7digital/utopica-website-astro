@@ -128,6 +128,18 @@ export function Footer() {
             </div>
           </div>
         </div>
+
+        {/* SEO Keywords Section */}
+        <div className="mt-12 pt-8 border-t border-gray-300">
+          <div className="text-xs text-gray-500 leading-relaxed">
+            <p className="mb-2">
+              <strong className="text-gray-700">Palabras clave:</strong> claridad comercial, ventas B2B, fundadores B2B, libertad comercial, mensaje de ventas, equipo de ventas, consultoría ventas, sprint comercial, delegación ventas, escalamiento B2B, estrategia comercial, posicionamiento B2B, propuesta de valor, argumentos de venta, discurso comercial, capacitación ventas, sistemas de venta, playbook comercial, metodología ventas, automatización comercial
+            </p>
+            <p>
+              <strong className="text-gray-700">Keywords:</strong> commercial clarity, B2B sales, B2B founders, commercial freedom, sales message, sales team, sales consulting, commercial sprint, sales delegation, B2B scaling, commercial strategy, B2B positioning, value proposition, sales arguments, sales pitch, sales training, sales systems, commercial playbook, sales methodology, sales automation
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
