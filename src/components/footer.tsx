@@ -54,24 +54,24 @@ export function Footer({ lang = 'es' }: FooterProps = {}) {
             <>
               {/* English Footer */}
               <p className="text-xs text-muted-foreground text-center mb-2">
-                B2B sales consulting in Mexico City: Polanco, Reforma, Santa Fe, Roma Norte, Condesa, Insurgentes and Lomas de Chapultepec.
+                Outsourced business development, sales coaching and sales growth consulting in Mexico City: Polanco, Reforma, Santa Fe, Roma Norte and Condesa.
               </p>
               
               {/* Invisible SEO keywords - English */}
               <div style={{ visibility: 'hidden', height: 0, overflow: 'hidden' }} aria-hidden="true">
-                B2B sales consulting Mexico City, sales strategy consulting CDMX, commercial consulting Mexico City, revenue growth consulting Mexico City, sales enablement consulting Mexico, sales consulting for B2B founders, go-to-market consulting Mexico, sales consulting Polanco Mexico, sales consulting Santa Fe Mexico, commercial consulting Reforma Mexico City, commercial consulting Roma Norte, commercial consulting Condesa Mexico
+                outsourced business development Mexico City, outsourced commercial development Mexico City, sales coach Mexico City, B2B sales coaching Mexico City, sales growth consulting Mexico City, increase sales in Mexico City, sales performance improvement Mexico City, sales training for B2B teams Mexico City, outsourced sales consulting Mexico City, outsourced business development Polanco Mexico, sales coach Polanco Mexico, sales growth Polanco Mexico, outsourced business development Reforma Mexico City, sales coach Reforma Mexico City, sales growth Reforma Mexico City, outsourced business development Santa Fe Mexico, sales coach Santa Fe Mexico, sales growth Santa Fe Mexico, outsourced business development Roma Norte, sales coach Roma Norte Mexico, sales growth Roma Norte, outsourced business development Condesa Mexico, sales coach Condesa Mexico, sales growth Condesa Mexico
               </div>
             </>
           ) : (
             <>
               {/* Spanish Footer */}
               <p className="text-xs text-muted-foreground text-center mb-2">
-                Consultoría comercial y ventas B2B en CDMX: Polanco, Reforma, Santa Fe, Roma Norte, Condesa, Insurgentes y Lomas de Chapultepec.
+                Desarrollo comercial externalizado, coaching de ventas e incremento de ventas en Ciudad de México: Polanco, Reforma, Santa Fe, Roma Norte y Condesa.
               </p>
               
               {/* Invisible SEO keywords - Spanish */}
               <div style={{ visibility: 'hidden', height: 0, overflow: 'hidden' }} aria-hidden="true">
-                consultoría comercial CDMX, consultoría ventas B2B CDMX, claridad comercial B2B CDMX, sprint comercial CDMX, estrategia de ventas B2B CDMX, escalamiento comercial B2B CDMX, consultoría comercial Polanco, consultoría comercial Reforma, consultoría comercial Santa Fe, consultoría comercial Roma Norte, consultoría comercial Condesa, consultoría comercial Insurgentes, consultoría comercial Lomas de Chapultepec, venta consultiva B2B CDMX, mensaje de ventas B2B
+                desarrollo comercial externalizado CDMX, desarrollo comercial externalizado en Ciudad de México, coach de ventas CDMX, coaching de ventas en Ciudad de México, incremento de ventas en Ciudad de México, incremento de ventas B2B CDMX, capacitación para generar mejores ventas CDMX, capacitación en ventas B2B CDMX, consultoría de ventas externalizada CDMX, optimización del área comercial CDMX, desarrollo comercial externalizado Polanco, coach de ventas Polanco, incremento de ventas Polanco CDMX, desarrollo comercial externalizado Reforma, coach de ventas Reforma CDMX, incremento de ventas Reforma, desarrollo comercial externalizado Santa Fe, coach de ventas Santa Fe CDMX, incremento de ventas Santa Fe, desarrollo comercial externalizado Roma Norte, coach de ventas Roma Norte, incremento de ventas Roma Norte, desarrollo comercial externalizado Condesa, coach de ventas Condesa, incremento de ventas Condesa
               </div>
             </>
           )}
