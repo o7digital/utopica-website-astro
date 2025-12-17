@@ -10,6 +10,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const pathname = Astro.url.pathname;
+const lang = pathname.startsWith('/en') ? 'en' : 'es';
 ---
 
 <!doctype html>
@@ -44,6 +45,6 @@ const pathname = Astro.url.pathname;
     </main>
     
     <!-- Footer React Component -->
-    <Footer client:load />
+    <Footer client:load lang={lang} />
   </body>
 </html>

@@ -4,7 +4,12 @@ import { Link } from '@/components/ui/Link';
 import { Linkedin, Youtube } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 
-export function Footer() {
+interface FooterProps {
+  lang?: 'es' | 'en';
+}
+
+export function Footer({ lang = 'es' }: FooterProps = {}) {
+  const isEnglish = lang === 'en';
   return (
     <footer className="bg-background border-t" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -41,6 +46,35 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Utópica. Todos los derechos reservados.</p>
+        </div>
+
+        {/* SEO Keywords Section - Language Specific */}
+        <div className="mt-6 pt-6 border-t border-gray-200">
+          {isEnglish ? (
+            <>
+              {/* English Footer */}
+              <p className="text-xs text-muted-foreground text-center mb-2">
+                B2B sales consulting in Mexico City: Polanco, Reforma, Santa Fe, Roma Norte, Condesa, Insurgentes and Lomas de Chapultepec.
+              </p>
+              
+              {/* Invisible SEO keywords - English */}
+              <div style={{ visibility: 'hidden', height: 0, overflow: 'hidden' }} aria-hidden="true">
+                B2B sales consulting Mexico City, sales strategy consulting CDMX, commercial consulting Mexico City, revenue growth consulting Mexico City, sales enablement consulting Mexico, sales consulting for B2B founders, go-to-market consulting Mexico, sales consulting Polanco Mexico, sales consulting Santa Fe Mexico, commercial consulting Reforma Mexico City, commercial consulting Roma Norte, commercial consulting Condesa Mexico
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Spanish Footer */}
+              <p className="text-xs text-muted-foreground text-center mb-2">
+                Consultoría comercial y ventas B2B en CDMX: Polanco, Reforma, Santa Fe, Roma Norte, Condesa, Insurgentes y Lomas de Chapultepec.
+              </p>
+              
+              {/* Invisible SEO keywords - Spanish */}
+              <div style={{ visibility: 'hidden', height: 0, overflow: 'hidden' }} aria-hidden="true">
+                consultoría comercial CDMX, consultoría ventas B2B CDMX, claridad comercial B2B CDMX, sprint comercial CDMX, estrategia de ventas B2B CDMX, escalamiento comercial B2B CDMX, consultoría comercial Polanco, consultoría comercial Reforma, consultoría comercial Santa Fe, consultoría comercial Roma Norte, consultoría comercial Condesa, consultoría comercial Insurgentes, consultoría comercial Lomas de Chapultepec, venta consultiva B2B CDMX, mensaje de ventas B2B
+              </div>
+            </>
+          )}
         </div>
       </div>
     </footer>
