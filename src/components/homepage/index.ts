@@ -1,4 +1,5 @@
 export { HeroSection } from './hero-section';
+export { HeroSlider } from './hero-slider';
 export { StakesSection } from './stakes-section';
 export { StakesSectionStatic } from './stakes-section-static';
 export { CommercialInjusticeSection } from './commercial-injustice-section';
