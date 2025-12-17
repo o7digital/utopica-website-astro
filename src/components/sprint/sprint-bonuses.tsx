@@ -141,7 +141,11 @@ const bonuses: Bonus[] = [
   }
 ];
 
-export function SprintBonuses() {
+interface SprintBonusesProps {
+  lang?: string;
+}
+
+export function SprintBonuses({ lang = 'es' }: SprintBonusesProps = {}) {
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-b from-muted/30 to-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
