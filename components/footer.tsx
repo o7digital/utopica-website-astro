@@ -129,14 +129,17 @@ export function Footer() {
           </div>
         </div>
 
-        {/* SEO Keywords Section */}
+        {/* SEO Content Section */}
         <div className="mt-12 pt-8 border-t border-gray-300">
-          <div className="text-xs text-gray-500 leading-relaxed">
-            <p className="mb-2">
-              <strong className="text-gray-700">Palabras clave:</strong> claridad comercial, ventas B2B, fundadores B2B, libertad comercial, mensaje de ventas, equipo de ventas, consultoría ventas, sprint comercial, delegación ventas, escalamiento B2B, estrategia comercial, posicionamiento B2B, propuesta de valor, argumentos de venta, discurso comercial, capacitación ventas, sistemas de venta, playbook comercial, metodología ventas, automatización comercial
+          <div className="text-xs text-gray-500 leading-relaxed space-y-3">
+            <p>
+              En Utópica ayudamos a fundadores B2B a lograr claridad comercial y libertad comercial a través de nuestro sprint comercial. Trabajamos con equipos de ventas para desarrollar un mensaje de ventas claro, estrategia comercial efectiva y posicionamiento B2B diferenciado. Nuestra consultoría de ventas se especializa en delegación de ventas, escalamiento B2B y automatización comercial.
             </p>
             <p>
-              <strong className="text-gray-700">Keywords:</strong> commercial clarity, B2B sales, B2B founders, commercial freedom, sales message, sales team, sales consulting, commercial sprint, sales delegation, B2B scaling, commercial strategy, B2B positioning, value proposition, sales arguments, sales pitch, sales training, sales systems, commercial playbook, sales methodology, sales automation
+              We help B2B founders achieve commercial clarity and commercial freedom through our commercial sprint. We work with sales teams to develop a clear sales message, effective commercial strategy, and differentiated B2B positioning. Our sales consulting specializes in sales delegation, B2B scaling, and sales automation.
+            </p>
+            <p>
+              Creamos propuestas de valor y argumentos de venta robustos, desarrollamos playbooks comerciales y sistemas de venta. Ofrecemos capacitación en ventas con metodologías probadas y discursos comerciales que funcionan. We create strong value propositions and sales arguments, develop commercial playbooks and sales systems. We offer sales training with proven sales methodologies and effective sales pitches.
             </p>
           </div>
         </div>
